@@ -1,113 +1,154 @@
-import Image from "next/image";
+"use client";
 
-export default function Home() {
+import React, { useState } from "react";
+import { ChevronLeft, ChevronRight, Sparkles } from "lucide-react";
+import HykoLogo from "./components/Hykologo";
+
+// Blueprint background component
+const BlueprintBackground = () => (
+  <div
+    className="absolute inset-0"
+    style={{
+      backgroundImage: `
+      linear-gradient(to right, #E6F3FF 2px, transparent 1px),
+      linear-gradient(to bottom, #E6F3FF 2px, transparent 1px)
+    `,
+      backgroundSize: "15px 15px",
+    }}
+  />
+);
+
+// Slide 1: Opening
+const OpeningSlide = () => (
+  <div className="flex flex-col items-center gap-y-8 h-screen text-blue-600 justify-center">
+    <BlueprintBackground />
+    <HykoLogo />
+    <div className="relative text-center z-10 flex-col gap-y-8 max-w-6xl">
+      <h2 className="text-4xl font-bold mb-8 z-10">
+        We have been building custom AI applications as craftmen for 10 years
+      </h2>
+      <p className="text-2xl z-10">
+        Kwanko - Arkia - Ratp - Total - Sonatrach - Ooredoo - Yourscrib
+      </p>
+      <p className="text-2xl z-10 mt-10">
+        We wanted to scale up and automatize how we build these applications
+      </p>
+    </div>
+  </div>
+);
+
+// Slide 2: Problem Statement
+const ProblemSlide = () => (
+  <div className="flex flex-col items-center justify-center h-screen text-blue-600 p-8">
+    <BlueprintBackground />
+    <HykoLogo />
+    <div className="relative z-10 text-center">
+      <h2 className="text-4xl font-bold mb-8">
+        What did we learn from 10 years in the ground field ?
+      </h2>
+      <ul className="text-2xl space-y-6 max-w-6xl mx-auto text-left">
+        <li>👥 People cannot formulate their problems clearly in few words.</li>
+        <li>🔧 It's hard to articulate a technical solution for a problem.</li>
+        <li>🔗 It's difficulte to materilize and share the solution.</li>
+      </ul>
+    </div>
+  </div>
+);
+
+// Slide 3: Solution
+const SolutionSlide = () => (
+  <div className="flex flex-col items-center py-32 h-screen text-blue-600 p-8">
+    <BlueprintBackground />
+    <HykoLogo />
+    <div className="relative z-10 text-center">
+      <h2 className="text-4xl font-bold mb-8">Hyko.ai</h2>
+
+      <ul className="text-2xl space-y-6 max-w-6xl mx-auto text-left">
+        <li>🧩 Drag and drop AI models/third-party action as nodes</li>
+        <li>🔗 Configure the nodes and connect them to build blueprints</li>
+        <li>⚡ Run/Share your blueprints from Editor/UI/API</li>
+      </ul>
+    </div>
+  </div>
+);
+const VideoGrid = () => {
+  const videoIds = [
+    "CUG6XbjJWkk",
+    "DQaMYdOazIQ",
+    "LLipFlFK2SI",
+    "TDl9jK093sE",
+    "e2OtBpoe2kE",
+  ];
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:size-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
-
-      <div className="relative z-[-1] flex place-items-center before:absolute before:h-[300px] before:w-full before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 sm:before:w-[480px] sm:after:w-[240px] before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-balance text-sm opacity-50">
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+      {videoIds.map((id, index) => (
+        <iframe
+          key={index}
+          className="aspect-w-16 aspect-h-9"
+          src={`https://www.youtube.com/embed/${id}`}
+          allowFullScreen
+        ></iframe>
+        // </div>
+      ))}
+    </div>
   );
-}
+};
+
+// Slide 4: Examples
+const ExampleSlide = () => (
+  <div className="flex flex-col items-center justify-center h-screen text-blue-600 p-8">
+    <BlueprintBackground />
+    <HykoLogo />
+    <div className="z-10 text-center">
+      <h2 className="text-4xl font-bold mb-8">Our clients are Happy !</h2>
+      <VideoGrid />
+    </div>
+  </div>
+);
+
+// Main Slideshow component
+const Slideshow = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const slides = [OpeningSlide, ProblemSlide, SolutionSlide, ExampleSlide];
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % slides.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
+  };
+
+  const CurrentSlide = slides[currentSlide];
+
+  return (
+    <div className="relative w-full h-screen">
+      <CurrentSlide />
+      <button
+        onClick={prevSlide}
+        className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-50 p-2 rounded-full"
+      >
+        <ChevronLeft size={24} color="#3B82F6" />
+      </button>
+      <button
+        onClick={nextSlide}
+        className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-50 p-2 rounded-full"
+      >
+        <ChevronRight size={24} color="#3B82F6" />
+      </button>
+      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2">
+        {slides.map((_, index) => (
+          <span
+            key={index}
+            className={`inline-block w-3 h-3 rounded-full mx-1 ${
+              index === currentSlide ? "bg-blue-600" : "bg-blue-300"
+            }`}
+          />
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export default Slideshow;
