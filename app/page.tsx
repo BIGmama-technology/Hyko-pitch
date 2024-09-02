@@ -74,7 +74,6 @@ const slugs = [
 
 // Slide 3: Solution
 const SolutionSlide = () => {
-
   return (
     <div className="grid place-items-center items-center py-32 h-screen text-blue-600 p-8">
       <BlueprintBackground />
@@ -87,6 +86,33 @@ const SolutionSlide = () => {
           <li>⚡ Run/Share your blueprints from Editor/UI/API</li>
         </ul>
         <IconCloud iconSlugs={slugs} />
+      </div>
+    </div>
+  );
+};
+
+const HykoSlide = () => {
+  const gifs = ["/connect.gif", "/loop_mode.gif", "/appbook.gif"];
+  const descriptions = [
+    "Connect nodes",
+    "Advanced features",
+    "Share simple UI",
+  ];
+  return (
+    <div className="flex items-center h-screen">
+      <div className="grid grid-cols-3  gap-3 mx-20 overflow-hidden">
+        <BlueprintBackground />
+        <HykoLogo />
+        {gifs.map((gif, idx) => (
+          <div className="z-10 max-w-full max-h-full object-contain">
+            <p className="text-2xl py-2 text-blue-600">{descriptions[idx]}</p>
+            <img
+              key={idx}
+              src={gif}
+              // className="z-10 max-w-full max-h-full object-contain"
+            />
+          </div>
+        ))}
       </div>
     </div>
   );
@@ -110,7 +136,6 @@ const VideoGrid = () => {
           src={`https://www.youtube.com/embed/${id}`}
           allowFullScreen
         ></iframe>
-        // </div>
       ))}
     </div>
   );
@@ -131,7 +156,13 @@ const ExampleSlide = () => (
 // Main Slideshow component
 const Slideshow = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const slides = [OpeningSlide, ProblemSlide, SolutionSlide, ExampleSlide];
+  const slides = [
+    OpeningSlide,
+    ProblemSlide,
+    SolutionSlide,
+    HykoSlide,
+    ExampleSlide,
+  ];
 
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % slides.length);
@@ -162,8 +193,9 @@ const Slideshow = () => {
         {slides.map((_, index) => (
           <span
             key={index}
-            className={`inline-block w-3 h-3 rounded-full mx-1 ${index === currentSlide ? "bg-blue-600" : "bg-blue-300"
-              }`}
+            className={`inline-block w-3 h-3 rounded-full mx-1 ${
+              index === currentSlide ? "bg-blue-600" : "bg-blue-300"
+            }`}
           />
         ))}
       </div>
