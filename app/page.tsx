@@ -1,8 +1,21 @@
 "use client";
 
-import React, { useState } from "react";
-import { ChevronLeft, ChevronRight, Sparkles } from "lucide-react";
+import React, { useEffect, useRef, useState } from "react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import HykoLogo from "./components/Hykologo";
+import { GithubIcon } from "./components/icons/github";
+import { AirTableIcon } from "./components/icons/air-table";
+import { Cohere } from "./components/icons/cohere";
+import { DocsIcon } from "./components/icons/docs";
+import { NotionIcon } from "./components/icons/notion";
+import { StabilityAi } from "./components/icons/stabilityai";
+import { YoutubeIcon } from "./components/icons/youtube";
+import { Gemini } from "./components/icons/gemini";
+import { GmailIcon } from "./components/icons/gmail";
+import { SheetsIcon } from "./components/icons/sheets";
+import { OpenAI } from "./components/icons/openai";
+import { DriveIcon } from "./components/icons/drive";
+import Nodes from "./components/Nodes";
 
 // Blueprint background component
 const BlueprintBackground = () => (
@@ -56,21 +69,74 @@ const ProblemSlide = () => (
 );
 
 // Slide 3: Solution
-const SolutionSlide = () => (
-  <div className="flex flex-col items-center py-32 h-screen text-blue-600 p-8">
-    <BlueprintBackground />
-    <HykoLogo />
-    <div className="relative z-10 text-center">
-      <h2 className="text-4xl font-bold mb-8">Hyko.ai</h2>
+const SolutionSlide = () => {
+  const sliderRef = useRef(null);
 
-      <ul className="text-2xl space-y-6 max-w-6xl mx-auto text-left">
-        <li>🧩 Drag and drop AI models/third-party action as nodes</li>
-        <li>🔗 Configure the nodes and connect them to build blueprints</li>
-        <li>⚡ Run/Share your blueprints from Editor/UI/API</li>
-      </ul>
+  useEffect(() => {
+    const slider = sliderRef.current;
+    let startPos = 0;
+    const speed = 0.5;
+
+    const animateSlider = () => {
+      startPos -= speed;
+      if (startPos < -slider.scrollWidth / 2) {
+        startPos = 0;
+      }
+      slider.style.transform = `translateX(${startPos}px)`;
+      requestAnimationFrame(animateSlider);
+    };
+
+    animateSlider();
+  }, []);
+
+  return (
+    <div className="flex flex-col items-center py-32 h-screen text-blue-600 p-8">
+      <BlueprintBackground />
+      <HykoLogo />
+      <div className="relative z-10 text-center">
+        <h2 className="text-4xl font-bold mb-8">Hyko.ai</h2>
+        <ul className="text-2xl space-y-6 max-w-6xl mx-auto text-left">
+          <li>🧩 Drag and drop AI models/third-party action as nodes</li>
+          <li>🔗 Configure the nodes and connect them to build blueprints</li>
+          <li>⚡ Run/Share your blueprints from Editor/UI/API</li>
+        </ul>
+        <div className="overflow-hidden mt-8">
+          <div
+            className="flex gap-8 animate-scroll whitespace-nowrap"
+            ref={sliderRef}
+          >
+            <GithubIcon className="w-14 h-14" />
+            <AirTableIcon className="w-14 h-14" />
+            <Cohere className="w-14 h-14" />
+            <DocsIcon className="w-14 h-14" />
+            <NotionIcon className="w-14 h-14" />
+            <StabilityAi className="w-14 h-14" />
+            <YoutubeIcon className="w-14 h-14" />
+            <Gemini className="w-14 h-14" />
+            <GmailIcon className="w-14 h-14" />
+            <SheetsIcon className="w-14 h-14" />
+            <OpenAI className="w-14 h-14" />
+            <DriveIcon className="w-14 h-14" />
+            {/* Repeat icons to create a seamless loop */}
+            <GithubIcon className="w-14 h-14" />
+            <AirTableIcon className="w-14 h-14" />
+            <Cohere className="w-14 h-14" />
+            <DocsIcon className="w-14 h-14" />
+            <NotionIcon className="w-14 h-14" />
+            <StabilityAi className="w-14 h-14" />
+            <YoutubeIcon className="w-14 h-14" />
+            <Gemini className="w-14 h-14" />
+            <GmailIcon className="w-14 h-14" />
+            <SheetsIcon className="w-14 h-14" />
+            <OpenAI className="w-14 h-14" />
+            <DriveIcon className="w-14 h-14" />
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
-);
+  );
+};
+
 const VideoGrid = () => {
   const videoIds = [
     "CUG6XbjJWkk",
@@ -85,7 +151,7 @@ const VideoGrid = () => {
       {videoIds.map((id, index) => (
         <iframe
           key={index}
-          className="aspect-w-16 aspect-h-9"
+          className="aspect-w-16 aspect-h-9 min-w-96 min-h-64"
           src={`https://www.youtube.com/embed/${id}`}
           allowFullScreen
         ></iframe>
