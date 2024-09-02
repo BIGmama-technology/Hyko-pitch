@@ -1,21 +1,9 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from "react";
+import React, { useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import HykoLogo from "./components/Hykologo";
-import { GithubIcon } from "./components/icons/github";
-import { AirTableIcon } from "./components/icons/air-table";
-import { Cohere } from "./components/icons/cohere";
-import { DocsIcon } from "./components/icons/docs";
-import { NotionIcon } from "./components/icons/notion";
-import { StabilityAi } from "./components/icons/stabilityai";
-import { YoutubeIcon } from "./components/icons/youtube";
-import { Gemini } from "./components/icons/gemini";
-import { GmailIcon } from "./components/icons/gmail";
-import { SheetsIcon } from "./components/icons/sheets";
-import { OpenAI } from "./components/icons/openai";
-import { DriveIcon } from "./components/icons/drive";
-import Nodes from "./components/Nodes";
+import IconCloud from "./components/IconCloud";
 
 // Blueprint background component
 const BlueprintBackground = () => (
@@ -68,29 +56,27 @@ const ProblemSlide = () => (
   </div>
 );
 
+const slugs = [
+  "googledocs",
+  "googlesheets",
+  "airtable",
+  "github",
+  "gmail",
+  "notion",
+  "openai",
+  "anthropic",
+  "google",
+  "googlegemini",
+  "googledrive",
+  "youtube",
+  "x",
+];
+
 // Slide 3: Solution
 const SolutionSlide = () => {
-  const sliderRef = useRef(null);
-
-  useEffect(() => {
-    const slider = sliderRef.current;
-    let startPos = 0;
-    const speed = 0.5;
-
-    const animateSlider = () => {
-      startPos -= speed;
-      if (startPos < -slider.scrollWidth / 2) {
-        startPos = 0;
-      }
-      slider.style.transform = `translateX(${startPos}px)`;
-      requestAnimationFrame(animateSlider);
-    };
-
-    animateSlider();
-  }, []);
 
   return (
-    <div className="flex flex-col items-center py-32 h-screen text-blue-600 p-8">
+    <div className="grid place-items-center items-center py-32 h-screen text-blue-600 p-8">
       <BlueprintBackground />
       <HykoLogo />
       <div className="relative z-10 text-center">
@@ -100,38 +86,7 @@ const SolutionSlide = () => {
           <li>🔗 Configure the nodes and connect them to build blueprints</li>
           <li>⚡ Run/Share your blueprints from Editor/UI/API</li>
         </ul>
-        <div className="overflow-hidden mt-8">
-          <div
-            className="flex gap-8 animate-scroll whitespace-nowrap"
-            ref={sliderRef}
-          >
-            <GithubIcon className="w-14 h-14" />
-            <AirTableIcon className="w-14 h-14" />
-            <Cohere className="w-14 h-14" />
-            <DocsIcon className="w-14 h-14" />
-            <NotionIcon className="w-14 h-14" />
-            <StabilityAi className="w-14 h-14" />
-            <YoutubeIcon className="w-14 h-14" />
-            <Gemini className="w-14 h-14" />
-            <GmailIcon className="w-14 h-14" />
-            <SheetsIcon className="w-14 h-14" />
-            <OpenAI className="w-14 h-14" />
-            <DriveIcon className="w-14 h-14" />
-            {/* Repeat icons to create a seamless loop */}
-            <GithubIcon className="w-14 h-14" />
-            <AirTableIcon className="w-14 h-14" />
-            <Cohere className="w-14 h-14" />
-            <DocsIcon className="w-14 h-14" />
-            <NotionIcon className="w-14 h-14" />
-            <StabilityAi className="w-14 h-14" />
-            <YoutubeIcon className="w-14 h-14" />
-            <Gemini className="w-14 h-14" />
-            <GmailIcon className="w-14 h-14" />
-            <SheetsIcon className="w-14 h-14" />
-            <OpenAI className="w-14 h-14" />
-            <DriveIcon className="w-14 h-14" />
-          </div>
-        </div>
+        <IconCloud iconSlugs={slugs} />
       </div>
     </div>
   );
@@ -207,9 +162,8 @@ const Slideshow = () => {
         {slides.map((_, index) => (
           <span
             key={index}
-            className={`inline-block w-3 h-3 rounded-full mx-1 ${
-              index === currentSlide ? "bg-blue-600" : "bg-blue-300"
-            }`}
+            className={`inline-block w-3 h-3 rounded-full mx-1 ${index === currentSlide ? "bg-blue-600" : "bg-blue-300"
+              }`}
           />
         ))}
       </div>
