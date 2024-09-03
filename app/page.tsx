@@ -5,25 +5,9 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import HykoLogo from "./components/Hykologo";
 import IconCloud from "./components/IconCloud";
 
-// Blueprint background component
-const BlueprintBackground = () => (
-  <div
-    className="absolute -z-10 inset-0"
-    style={{
-      backgroundImage: `
-      linear-gradient(to right, #E6F3FF 2px, transparent 1px),
-      linear-gradient(to bottom, #E6F3FF 2px, transparent 1px)
-    `,
-      backgroundSize: "15px 15px",
-    }}
-  />
-);
-
 // Slide 1: Opening
 const OpeningSlide = () => (
   <div className="flex w-full flex-col items-center gap-y-8 text-blue-600 justify-center">
-    <BlueprintBackground />
-    <HykoLogo />
     <div className="relative text-center z-10 flex-col gap-y-8 max-w-6xl">
       <h2 className=" text-2xl sm:text-4xl font-bold mb-8 z-10">
         We have been building custom AI applications as craftmen for 10 years
@@ -40,9 +24,7 @@ const OpeningSlide = () => (
 
 // Slide 2: Problem Statement
 const ProblemSlide = () => (
-  <div className="flex flex-col items-center justify-center h-screen text-blue-600 p-8">
-    <BlueprintBackground />
-    <HykoLogo />
+  <div className="flex w-full flex-col items-center justify-center  text-blue-600 p-8">
     <div className="relative z-10 text-center">
       <h2 className="text-start text-2xl md:text-4xl font-bold mb-8">
         What did we learn from 10 years in the ground field ?
@@ -81,9 +63,7 @@ const slugs = [
 // Slide 3: Solution
 const SolutionSlide = () => {
   return (
-    <div className="grid place-items-center items-center py-16 sm:py-32 h-screen text-blue-600 p-8">
-      <BlueprintBackground />
-      <HykoLogo />
+    <div className="grid place-items-center items-center py-16 sm:py-32  text-blue-600 p-8">
       <div className="relative z-10 text-center">
         <h2 className="text-2xl sm:text-4xl font-bold mb-8">Hyko.ai</h2>
         <ul className="text-xl sm:text-2xl space-y-6 max-w-6xl mx-auto text-left">
@@ -106,8 +86,6 @@ const HykoSlide = () => {
   ];
   return (
     <div className="flex items-center justify-center py-16">
-      <BlueprintBackground />
-      <HykoLogo />
       <div className="grid  sm:grid-cols-2 grid-col-1  gap-3 mx-auto overflow-hidden">
         {gifs.map((gif, idx) => (
           <div className="max-w-60 sm:max-w-sm object-contain" key={gif}>
@@ -137,7 +115,7 @@ const VideoGrid = () => {
       {videoIds.map((id, index) => (
         <iframe
           key={index}
-          className="aspect-w-16 aspect-h-9  min-h-64"
+          className="aspect-w-16 aspect-h-9 "
           src={`https://www.youtube.com/embed/${id}`}
           allowFullScreen
         ></iframe>
@@ -148,9 +126,7 @@ const VideoGrid = () => {
 
 // Slide 4: Examples
 const ExampleSlide = () => (
-  <div className="flex flex-col items-center justify-center h-screen text-blue-600 p-8">
-    <BlueprintBackground />
-    <HykoLogo />
+  <div className="flex flex-col items-center justify-center text-blue-600">
     <div className="z-10 text-center">
       <h2 className="text-4xl font-bold mb-8">Our clients are Happy !</h2>
       <VideoGrid />
@@ -180,7 +156,19 @@ const Slideshow = () => {
   const CurrentSlide = slides[currentSlide];
 
   return (
-    <div className="relative w-full flex flex-col h-screen items-center justify-center p-8">
+
+    <div
+
+      style={{
+        backgroundImage: `
+      linear-gradient(to right, #E6F3FF 2px, transparent 1px),
+      linear-gradient(to bottom, #E6F3FF 2px, transparent 1px)
+    `,
+        backgroundSize: "15px 15px",
+      }}
+      className="relative w-full inset-0 flex flex-col min-h-screen  p-8">
+
+      <HykoLogo />
       <div className="flex items-center justify-between max-h-full w-full ">
         <button
           onClick={prevSlide}
