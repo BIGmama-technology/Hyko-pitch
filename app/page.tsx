@@ -78,10 +78,16 @@ const SolutionSlide = () => {
 };
 
 const HykoSlide = () => {
-  const gifs = ["/connect.gif", "/loop_mode.gif", "/appbook.gif"];
+  const gifs = ["/connect.gif", "/loop_mode.gif", "/appbook.gif", "/connect.gif", "/connect.gif", "/connect.gif"];
   const descriptions = [
     "Connect nodes",
     "Advanced features",
+    "Share simple UI",
+
+    "Share simple UI",
+
+    "Share simple UI",
+
     "Share simple UI",
   ];
   return (
