@@ -111,7 +111,7 @@ const VideoGrid = () => {
   ];
 
   return (
-    <div className="flex flex-wrap gap-6">
+    <div className="flex flex-wrap gap-2 sm:gap-6">
       {videoIds.map((id, index) => (
         <iframe
           key={index}
@@ -166,9 +166,11 @@ const Slideshow = () => {
     `,
         backgroundSize: "15px 15px",
       }}
-      className="relative w-full inset-0 flex flex-col min-h-screen  p-8">
-
+      className="relative w-full inset-0 flex flex-col justify-around  min-h-screen p-4 sm:p-8">
+      {/*
+        for better ui i encourage removing this
       <HykoLogo />
+   */   }
       <div className="flex items-center justify-between max-h-full w-full ">
         <button
           onClick={prevSlide}
@@ -188,7 +190,7 @@ const Slideshow = () => {
           <ChevronRight size={24} color="#3B82F6" />
         </button>
       </div>
-      <div className="flex justify-center mt-4 ">
+      <div className="flex justify-center mt-4">
         {slides.map((_, index) => (
           <span
             key={index}
