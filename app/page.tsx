@@ -8,7 +8,7 @@ import IconCloud from "./components/IconCloud";
 // Blueprint background component
 const BlueprintBackground = () => (
   <div
-    className="absolute inset-0"
+    className="absolute -z-10 inset-0"
     style={{
       backgroundImage: `
       linear-gradient(to right, #E6F3FF 2px, transparent 1px),
@@ -21,17 +21,17 @@ const BlueprintBackground = () => (
 
 // Slide 1: Opening
 const OpeningSlide = () => (
-  <div className="flex flex-col items-center gap-y-8 h-screen text-blue-600 justify-center">
+  <div className="flex w-full flex-col items-center gap-y-8 text-blue-600 justify-center">
     <BlueprintBackground />
     <HykoLogo />
     <div className="relative text-center z-10 flex-col gap-y-8 max-w-6xl">
-      <h2 className="text-4xl font-bold mb-8 z-10">
+      <h2 className=" text-2xl sm:text-4xl font-bold mb-8 z-10">
         We have been building custom AI applications as craftmen for 10 years
       </h2>
-      <p className="text-2xl z-10">
+      <p className=" text-xl sm:text-2xl z-10">
         Kwanko - Arkia - Ratp - Total - Sonatrach - Ooredoo - Yourscrib
       </p>
-      <p className="text-2xl z-10 mt-10">
+      <p className="text-xl sm:text-2xl z-10 mt-10">
         We wanted to scale up and automatize how we build these applications
       </p>
     </div>
@@ -44,10 +44,10 @@ const ProblemSlide = () => (
     <BlueprintBackground />
     <HykoLogo />
     <div className="relative z-10 text-center">
-      <h2 className="text-4xl font-bold mb-8">
+      <h2 className="text-start text-2xl md:text-4xl font-bold mb-8">
         What did we learn from 10 years in the ground field ?
       </h2>
-      <ul className="text-2xl space-y-6 max-w-6xl mx-auto text-left">
+      <ul className="text-xl md:text-2xl space-y-6 max-w-6xl mx-auto text-left">
         <li>👥 People cannot formulate their problems clearly in few words.</li>
         <li>🔧 It's hard to articulate a technical solution for a problem.</li>
         <li>🔗 It's difficulte to materilize and share the solution.</li>
@@ -81,12 +81,12 @@ const slugs = [
 // Slide 3: Solution
 const SolutionSlide = () => {
   return (
-    <div className="grid place-items-center items-center py-32 h-screen text-blue-600 p-8">
+    <div className="grid place-items-center items-center py-16 sm:py-32 h-screen text-blue-600 p-8">
       <BlueprintBackground />
       <HykoLogo />
       <div className="relative z-10 text-center">
-        <h2 className="text-4xl font-bold mb-8">Hyko.ai</h2>
-        <ul className="text-2xl space-y-6 max-w-6xl mx-auto text-left">
+        <h2 className="text-2xl sm:text-4xl font-bold mb-8">Hyko.ai</h2>
+        <ul className="text-xl sm:text-2xl space-y-6 max-w-6xl mx-auto text-left">
           <li>🧩 Drag and drop AI models/third-party action as nodes</li>
           <li>🔗 Configure the nodes and connect them to build blueprints</li>
           <li>⚡ Run/Share your blueprints from Editor/UI/API</li>
@@ -105,17 +105,16 @@ const HykoSlide = () => {
     "Share simple UI",
   ];
   return (
-    <div className="flex items-center h-screen">
-      <div className="grid grid-cols-3  gap-3 mx-20 overflow-hidden">
-        <BlueprintBackground />
-        <HykoLogo />
+    <div className="flex items-center justify-center py-16">
+      <BlueprintBackground />
+      <HykoLogo />
+      <div className="grid  sm:grid-cols-2 grid-col-1  gap-3 mx-auto overflow-hidden">
         {gifs.map((gif, idx) => (
-          <div className="z-10 max-w-full max-h-full object-contain">
-            <p className="text-2xl py-2 text-blue-600">{descriptions[idx]}</p>
+          <div className="max-w-60 sm:max-w-sm object-contain" key={gif}>
+            <p className="text-xl sm:text-2xl py-2 text-blue-600">{descriptions[idx]}</p>
             <img
-              key={idx}
               src={gif}
-              // className="z-10 max-w-full max-h-full object-contain"
+            // className="z-10 max-w-full max-h-full object-contain"
             />
           </div>
         ))}
@@ -134,11 +133,11 @@ const VideoGrid = () => {
   ];
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+    <div className="flex flex-wrap gap-6">
       {videoIds.map((id, index) => (
         <iframe
           key={index}
-          className="aspect-w-16 aspect-h-9 min-w-96 min-h-64"
+          className="aspect-w-16 aspect-h-9  min-h-64"
           src={`https://www.youtube.com/embed/${id}`}
           allowFullScreen
         ></iframe>
@@ -181,32 +180,36 @@ const Slideshow = () => {
   const CurrentSlide = slides[currentSlide];
 
   return (
-    <div className="relative w-full h-screen">
-      <CurrentSlide />
-      <button
-        onClick={prevSlide}
-        className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-50 p-2 rounded-full"
-      >
-        <ChevronLeft size={24} color="#3B82F6" />
-      </button>
-      <button
-        onClick={nextSlide}
-        className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-50 p-2 rounded-full"
-      >
-        <ChevronRight size={24} color="#3B82F6" />
-      </button>
-      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2">
+    <div className="relative w-full flex flex-col h-screen items-center justify-center p-8">
+      <div className="flex items-center justify-between max-h-full w-full ">
+        <button
+          onClick={prevSlide}
+          className="bg-white bg-opacity-50 p-2 rounded-full hover:bg-opacity-75 transition-all"
+        >
+          <ChevronLeft size={24} color="#3B82F6" />
+        </button>
+
+        <div className="mx-2 flex items-center justify-center">
+          <CurrentSlide />
+        </div>
+
+        <button
+          onClick={nextSlide}
+          className="bg-white bg-opacity-50 p-2 rounded-full hover:bg-opacity-75 transition-all"
+        >
+          <ChevronRight size={24} color="#3B82F6" />
+        </button>
+      </div>
+      <div className="flex justify-center mt-4 ">
         {slides.map((_, index) => (
           <span
             key={index}
-            className={`inline-block w-3 h-3 rounded-full mx-1 ${
-              index === currentSlide ? "bg-blue-600" : "bg-blue-300"
-            }`}
+            className={`inline-block w-2 h-2 rounded-full mx-1 ${index === currentSlide ? "bg-blue-600" : "bg-blue-300"
+              }`}
           />
         ))}
       </div>
-    </div>
-  );
+    </div>);
 };
 
 export default Slideshow;

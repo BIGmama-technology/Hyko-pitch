@@ -17,12 +17,12 @@ export const cloudProps: Omit<ICloud, "children"> = {
       justifyContent: "center",
       alignItems: "center",
       width: "100%",
-      paddingTop: 40,
+      paddingTop: 30,
     },
   },
   canvasProps: {
     style: {
-      height: "50vh"
+      height: "20vh"
     }
   },
   options: {
@@ -52,7 +52,7 @@ export const renderCustomIcon = (icon: SimpleIcon, theme: string) => {
     bgHex,
     fallbackHex,
     minContrastRatio,
-    size: 42,
+    size: 70,
     aProps: {
       href: undefined,
       target: undefined,
