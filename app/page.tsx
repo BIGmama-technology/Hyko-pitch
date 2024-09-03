@@ -70,6 +70,12 @@ const slugs = [
   "googledrive",
   "youtube",
   "x",
+  "arxiv",
+  "cohere",
+  "gemini",
+  "wikipedia",
+  "stabilityai",
+  "sheets",
 ];
 
 // Slide 3: Solution
