@@ -22,14 +22,13 @@ const BlueprintBackground = () => (
 // Slide 1: Opening
 const OpeningSlide = () => (
   <div className="flex flex-col items-center gap-y-8 h-screen text-blue-600 justify-center">
-    <BlueprintBackground />
-    <HykoLogo />
     <div className="relative text-center z-10 flex-col gap-y-8 max-w-6xl">
       <h2 className="text-4xl font-bold mb-8 z-10">
         We have been building custom AI applications as craftmen for 10 years
       </h2>
       <p className="text-2xl z-10">
-        Kwanko - Arkia - Ratp - Total - Sonatrach - Ooredoo - Yourscrib
+        Kwanko - Arkea bank - Ratp - Total - Sonatrach - Ooredoo - Yourscrib ...
+        and many more !
       </p>
       <p className="text-2xl z-10 mt-10">
         We wanted to scale up and automatize how we build these applications
@@ -41,8 +40,6 @@ const OpeningSlide = () => (
 // Slide 2: Problem Statement
 const ProblemSlide = () => (
   <div className="flex flex-col items-center justify-center h-screen text-blue-600 p-8">
-    <BlueprintBackground />
-    <HykoLogo />
     <div className="relative z-10 text-center">
       <h2 className="text-4xl font-bold mb-8">
         What did we learn from 10 years in the ground field ?
@@ -82,8 +79,6 @@ const slugs = [
 const SolutionSlide = () => {
   return (
     <div className="grid place-items-center items-center py-32 h-screen text-blue-600 p-8">
-      <BlueprintBackground />
-      <HykoLogo />
       <div className="relative z-10 text-center">
         <h2 className="text-4xl font-bold mb-8">Hyko.ai</h2>
         <ul className="text-2xl space-y-6 max-w-6xl mx-auto text-left">
@@ -107,8 +102,6 @@ const HykoSlide = () => {
   return (
     <div className="flex items-center h-screen">
       <div className="grid grid-cols-3  gap-3 mx-20 overflow-hidden">
-        <BlueprintBackground />
-        <HykoLogo />
         {gifs.map((gif, idx) => (
           <div className="z-10 max-w-full max-h-full object-contain">
             <p className="text-2xl py-2 text-blue-600">{descriptions[idx]}</p>
@@ -150,8 +143,6 @@ const VideoGrid = () => {
 // Slide 4: Examples
 const ExampleSlide = () => (
   <div className="flex flex-col items-center justify-center h-screen text-blue-600 p-8">
-    <BlueprintBackground />
-    <HykoLogo />
     <div className="z-10 text-center">
       <h2 className="text-4xl font-bold mb-8">Our clients are Happy !</h2>
       <VideoGrid />
@@ -182,6 +173,8 @@ const Slideshow = () => {
 
   return (
     <div className="relative w-full h-screen">
+      <BlueprintBackground />
+      <HykoLogo />
       <CurrentSlide />
       <button
         onClick={prevSlide}
