@@ -32,7 +32,7 @@ const OpeningSlide = () => (
       </p>
       <p className="text-2xl z-10 mt-10">
         We decided in 2022 to move from consulting to SaaS: allowing our users
-        to build AI agents by them selves !
+        to build AI agents by themselves !
       </p>
     </div>
   </div>
