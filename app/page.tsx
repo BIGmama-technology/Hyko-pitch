@@ -31,7 +31,8 @@ const OpeningSlide = () => (
         and many more !
       </p>
       <p className="text-2xl z-10 mt-10">
-        We wanted to scale up and automatize how we build these applications
+        We decided in 2022 to move from consulting to SaaS: allowing our users
+        to build AI agents by them selves !
       </p>
     </div>
   </div>
@@ -136,7 +137,7 @@ const VideoGrid = () => {
           allowFullScreen
         ></iframe>
       ))}
-      <div className="flex items-center justify-center col-span-full mt-4">
+      <div className="flex items-center justify-center col-span-full mt-5">
         <p className="text-3xl text-center">Contact us on hk@big-mama.io</p>
       </div>
     </div>
