@@ -101,15 +101,11 @@ const HykoSlide = () => {
   ];
   return (
     <div className="flex items-center h-screen">
-      <div className="grid grid-cols-3  gap-3 mx-20 overflow-hidden">
+      <div className="grid grid-cols-3 gap-3 mx-20 overflow-hidden">
         {gifs.map((gif, idx) => (
           <div className="z-10 max-w-full max-h-full object-contain">
             <p className="text-2xl py-2 text-blue-600">{descriptions[idx]}</p>
-            <img
-              key={idx}
-              src={gif}
-              // className="z-10 max-w-full max-h-full object-contain"
-            />
+            <img key={idx} src={gif} />
           </div>
         ))}
       </div>
@@ -150,6 +146,59 @@ const ExampleSlide = () => (
   </div>
 );
 
+const HykoTeam = () => {
+  const team = [
+    "hadj.png",
+    "hachem.png",
+    "ouassim.jpg",
+    "yousra.png",
+    "louai.png",
+    "samir.png",
+    "karim.png",
+    "darine.png",
+    "mehdi.png",
+  ];
+  const team_descriptions = [
+    "Hadj Khelil CEO",
+    "Hachem Betrouni CTO",
+    "Ouassim Ghribi lead-software-engineer",
+    "Yousra backend-engineer",
+    "Louai backend-engineer",
+    "Karim frontend-engineer",
+    "Darine Tag community-manager",
+    "Mehdi Kalel AI researcher",
+  ];
+  const board = ["nacer.png", "edgar.png", "herteman.png", "jac.png"];
+  const board_descriptions = ["Hadj nacer", "Edgar Morin", "Herteman", "Jack"];
+
+  return (
+    <div className="flex items-center h-screen">
+      // <h2>We are a soup of focused, idea-generators and can-do attitudes</h2>
+      <div className="grid grid-cols-5 gap-3 mx-20 overflow-hidden">
+        {team.map((image, idx) => (
+          <div className="z-10 max-w-full max-h-full object-contain">
+            <img key={idx} src={`team/${image}`} />
+            <p className="text-2xl py-2 text-blue-600">
+              {team_descriptions[idx]}
+            </p>
+          </div>
+        ))}
+      </div>
+      <h2>Our board members</h2>
+      <div className="grid grid-cols-5 gap-3 mx-20 overflow-hidden">
+        {board.map((image, idx) => (
+          <div className="z-10 max-w-full max-h-full object-contain">
+            <img key={idx} src={`team/${image}`} />
+            <p className="text-2xl py-2 text-blue-600">
+              {board_descriptions[idx]}
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
 // Main Slideshow component
 const Slideshow = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -159,6 +208,7 @@ const Slideshow = () => {
     SolutionSlide,
     HykoSlide,
     ExampleSlide,
+    HykoTeam,
   ];
 
   const nextSlide = () => {
