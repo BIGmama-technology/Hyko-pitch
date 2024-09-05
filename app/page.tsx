@@ -127,7 +127,7 @@ const VideoGrid = () => {
   ];
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 justify-items-center items-center">
       {videoIds.map((id, index) => (
         <iframe
           key={index}
@@ -136,6 +136,9 @@ const VideoGrid = () => {
           allowFullScreen
         ></iframe>
       ))}
+      <div className="flex items-center justify-center col-span-full mt-4">
+        <p className="text-3xl text-center">Contact us on hk@big-mama.io</p>
+      </div>
     </div>
   );
 };
