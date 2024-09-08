@@ -4,6 +4,9 @@ import React, { useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import HykoLogo from "./components/Hykologo";
 import IconCloud from "./components/IconCloud";
+import Image from "next/image";
+import { teamMembers } from "./components/constants";
+
 
 // Slide 1: Opening
 const OpeningSlide = () => (
@@ -209,3 +212,4 @@ const Slideshow = () => {
 };
 
 export default Slideshow;
+
