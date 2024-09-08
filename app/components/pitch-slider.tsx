@@ -16,7 +16,6 @@ import { ClientsSlide } from "./clients-slide"
 import * as React from 'react'
 
 export function PitchSlider() {
-  const [currentSlide, setCurrentSlide] = React.useState()
   const Slides = [
     OpeningSlide,
     ProblemSlide,
@@ -38,25 +37,26 @@ export function PitchSlider() {
       setCurrent(api.selectedScrollSnap() + 1)
     })
   }, [api])
+
   return (
-    <div className="flex flex-col max-h-screen">
-      <Carousel className="" setApi={setApi}>
-        <CarouselContent className="max-w-4xl">
+    <div className="flex flex-col max-h-[100vh] overflow-y-scroll overflow-x-hidden">
+      <Carousel className="w-ful" setApi={setApi}>
+        <CarouselContent className="w-full max-w-[90vw]  max-h-[80vh] sm:max-h-[95vh]  sm:max-w-lg md:max-w-4xl ">
           {Slides.map((Item) => (
-            <CarouselItem key={Item.toString()} className="flex justify-center items-center">
+            <CarouselItem key={Item.toString()} className="flex overflow-y-scroll justify-center items-center">
               <Item />
             </CarouselItem>
           ))}
         </CarouselContent>
         <CarouselPrevious />
         <CarouselNext />
-      </Carousel >
-      <div className="flex justify-center mt-4">
+      </Carousel>
+
+      <div className="flex justify-center pt-4">
         {Slides.map((item, index) => (
           <span
             key={item.toString()}
-            className={`inline-block w-2 h-2 rounded-full mx-1 ${index + 1 === current ? "bg-blue-600" : "bg-blue-300"
-              }`}
+            className={`inline-block w-2 h-2 rounded-full mx-1 ${index + 1 === current ? "bg-blue-600" : "bg-blue-300"}`}
           />
         ))}
       </div>

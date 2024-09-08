@@ -8,8 +8,8 @@ export function ClientsSlide() {
   ];
   return (
     <div className="flex flex-col items-center justify-center text-blue-600">
-      <div className="z-10 text-center">
-        <h2 className="text-4xl font-bold mb-8">Our clients are Happy !</h2>
+      <div className="text-center">
+        <h2 className="text-4xl font-bold mb-2 sm:mb-8">Our clients are Happy !</h2>
         <div className="flex flex-wrap gap-2 sm:gap-6">
           {videoIds.map((id, index) => (
             <iframe

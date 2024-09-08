@@ -1,14 +1,15 @@
 export default function OpeningSlide() {
-  return (<div className="flex  w-full flex-col items-center  gap-y-8  text-blue-600 justify-center">
-    <h2 className=" text-2xl sm:text-4xl font-bold mb-8">
-      We have been building custom AI applications as craftmen for 10 years
-    </h2>
-    <p className=" text-xl sm:text-2xl ">
-      Kwanko - Arkia - Ratp - Total - Sonatrach - Ooredoo - Yourscrib
-    </p>
-    <p className="text-xl sm:text-2xl  mt-10">
-      We wanted to scale up and automatize how we build these applications
-    </p>
-  </div>
+  return (
+    <div className="flex w-full flex-col items-center gap-y-2 sm:gap-y-8 text-blue-600 justify-center px-4 sm:px-0">
+      <h2 className="text-2xl sm:text-4xl font-bold mb-2 sm:mb-8 sm:text-center">
+        We have been building custom AI applications as craftsmen for 10 years
+      </h2>
+      <p className="text-xl sm:text-2xl sm:text-center">
+        Kwanko - Arkia - Ratp - Total - Sonatrach - Ooredoo - Yourscrib
+      </p>
+      <p className="text-xl sm:text-2xl  mt-2 sm:mt-10 sm:text-center">
+        We wanted to scale up and automate how we build these applications
+      </p>
+    </div>
   )
 }
