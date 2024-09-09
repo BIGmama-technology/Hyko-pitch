@@ -75,3 +75,36 @@ export const teamContent: TeamProps[] =
       image: '/team/mahdi.png'
     }
   ]
+
+
+export interface FaqProps {
+  title: string
+  items: string[]
+}
+
+export const faqContent: FaqProps[] = [{
+  title: 'WHY USE HYKO ON A RECURRING BASIS?',
+  items: ['Hyko helps you automate your daily workflows (which are by definition used everyday).', 'AI is constantly moving. Everyday you have new tools, new API\'s, etc ready to use on hyko.', 'Problems (by nature) always change. Hyko offers you the opportunity to enhance your solutions on a daily basis.']
+},
+{
+  title: 'WHY ARE WE CONFIDENT IN OUR VISION OF THE FUTURE?',
+  items: [
+    'Real disruption comes from the bottom.We are offering to "common" people a plausible opportunity to take a quantum leap.What we offer is a new boat to ride the AI wave(to sail the AI ocean).'
+  ]
+},
+{
+  title: 'WHAT IS OUR TARGET (medium term)',
+  items: [
+    'Offering our users an efficient AI assistant that would help them convert their issues into ready-to-use workflows on Hyko. (problematization)'
+    , 'Ability to export your AI tools into "friendly" apps with one button.', 'Increase the size of our toolkit by supporting more integrations (web scraping utilities, data connectors and webhooks).', 'Ability for users/organizations to add custom models and tools to their private toolkit.'
+  ]
+},
+{
+  title: 'WHAT IS OUR COMPETITIVE ADVANTAGE ?',
+  items: [
+    'We understood before anyone else how artificial intelligence could be used to solve complex problems in the daily lives of professionals.'
+    , '10 years experience on the ground with dozens of clients allowed us to conceive a unique approach/ methodology for problem-solving.'
+  ]
+},
+
+]
