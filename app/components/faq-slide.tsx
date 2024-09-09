@@ -19,7 +19,6 @@ export function FaqSlide() {
           </AccordionContent>
         </AccordionItem>
       ))}
-
       <AccordionItem value={'WHY ARE WE UNIQUE?'} className='hover:bg-muted rounded-md sm:p-6 transition-all'>
         <AccordionTrigger className='text-left hover:no-underline'>
           <h2 className='text-lg font-bold md:text-2xl'>WHY ARE WE UNIQUE?</h2>
