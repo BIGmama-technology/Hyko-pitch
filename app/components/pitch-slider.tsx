@@ -17,6 +17,7 @@ import * as React from 'react'
 import HykoLogo from "./Hykologo"
 import { Team } from "./team-slide"
 import { Competitors } from "./competitors-slide"
+import { BusinessModel } from "./business-model-slide"
 
 export function PitchSlider() {
   const Slides = [
@@ -27,6 +28,7 @@ export function PitchSlider() {
     ClientsSlide,
     Team
     , Competitors
+    , BusinessModel
   ]
   const [api, setApi] = React.useState<CarouselApi>()
   const [current, setCurrent] = React.useState(0)
