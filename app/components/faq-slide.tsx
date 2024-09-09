@@ -4,9 +4,9 @@ import { faqContent } from "./constants";
 
 
 export function FaqSlide() {
-  return <div className="text-blue-600 overflow-y-scroll max-h-[80vh] mx-4 h-full flex flex-col justify-center">
+  return <div className="text-blue-600  max-h-[92vh] mx-4 h-full flex flex-col justify-center">
     <h2 className="text-2xl sm:text-2xl font-bold mb-2 sm:mb-8 ">What they usually ask ?</h2>
-    <Accordion type="multiple">
+    <Accordion type="multiple" className="overflow-y-scroll">
       {faqContent.map(faq => (
         <AccordionItem value={faq.title} key={faq.title} className='hover:bg-muted rounded-md  sm:p-6 transition-all'>
           <AccordionTrigger className='text-left hover:no-underline'>
@@ -20,10 +20,6 @@ export function FaqSlide() {
         </AccordionItem>
       ))}
 
-    </Accordion>
-
-
-    <Accordion type="multiple">
       <AccordionItem value={'WHY ARE WE UNIQUE?'} className='hover:bg-muted rounded-md sm:p-6 transition-all'>
         <AccordionTrigger className='text-left hover:no-underline'>
           <h2 className='text-lg font-bold md:text-2xl'>WHY ARE WE UNIQUE?</h2>
@@ -58,5 +54,6 @@ export function FaqSlide() {
         </AccordionContent>
       </AccordionItem>
     </Accordion>
+
   </div>
 }
