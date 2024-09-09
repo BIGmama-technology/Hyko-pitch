@@ -7,8 +7,8 @@ export function ClientsSlide() {
     "e2OtBpoe2kE",
   ];
   return (
-    <div className="flex w-full flex-col items-center justify-center text-blue-600 max-h-[80vh]  px-4 overflow-y-scroll">
-      <h2 className="text-4xl font-bold mb-2 text-center sm:mb-8">Our clients are Happy !</h2>
+    <div className="flex w-full flex-col items-center justify-center text-blue-600 max-h-[75vh]  px-4 overflow-y-scroll">
+      <h2 className="text-2xl sm:text-4xl font-bold text-center mb-8">Our clients are Happy !</h2>
       <div className="grid justify-center justify-items-center items-center md:grid-cols-3 sm:grid-cols-2 grid-col-1 gap-3 overflow-y-scroll">
         {videoIds.map((id) => (
           <iframe

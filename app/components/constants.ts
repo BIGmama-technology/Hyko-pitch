@@ -106,5 +106,24 @@ export const faqContent: FaqProps[] = [{
     , '10 years experience on the ground with dozens of clients allowed us to conceive a unique approach/ methodology for problem-solving.'
   ]
 },
+{
+  title: 'WHY ARE WE UNIQUE?',
+  items: [
+    'First, Hyko constitutes of a very large codebase. Even with a blueprint, reproduction could take months for a competent team (for only the very first iteration of the process).'
+    , 'Our vision is so different (we believe more in people than in machines) that our competitors don\'t see the market in the same way we do.'
+    ,
+    'The quality of our team means that even someone with the same great idea as us couldn\'t do it as quickly.'
+    , 'Most importantly, is the ability to redesign Hyko\'s architecture in line with the day- to - day changes in our industry.This requires great strategic expertise, an outstanding technological capacity, a rare ability to execute and an extraordinary intuition.All this, is very difficult to replace.'
+  ]
+},
+{
+  title: 'WHAT IS OUR VISION ?',
+  items: [
+    'The future value of AI will not come from AI engineers or data scientists, it will come from field experts who will be able to combine their expertise with AI in order to solve daily problems.'
+  ]
+},
+
+
+
 
 ]
