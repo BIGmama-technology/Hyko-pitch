@@ -14,14 +14,13 @@ import { SolutionSlide } from "./solution-slide"
 import { HykoSlide } from "./hyko-slide"
 import { ClientsSlide } from "./clients-slide"
 import * as React from 'react'
+import HykoLogo from "./Hykologo"
 
 export function PitchSlider() {
   const Slides = [
     OpeningSlide,
     ProblemSlide,
     SolutionSlide,
-    HykoSlide,
-    ClientsSlide,
   ]
   const [api, setApi] = React.useState<CarouselApi>()
   const [current, setCurrent] = React.useState(0)
@@ -39,27 +38,37 @@ export function PitchSlider() {
   }, [api])
 
   return (
-    <div className="flex flex-col max-h-[100vh] overflow-y-scroll overflow-x-hidden">
-      <Carousel className="w-ful" setApi={setApi}>
-        <CarouselContent className="w-full max-w-[90vw]  max-h-[80vh] sm:max-h-[95vh]  sm:max-w-lg md:max-w-4xl ">
-          {Slides.map((Item) => (
-            <CarouselItem key={Item.toString()} className="flex overflow-y-scroll justify-center items-center">
-              <Item />
-            </CarouselItem>
-          ))}
-        </CarouselContent>
-        <CarouselPrevious />
-        <CarouselNext />
-      </Carousel>
+    <Carousel
+      style={{
+        backgroundImage: `
+      linear-gradient(to right, #E6F3FF 2px, transparent 1px),
+      linear-gradient(to bottom, #E6F3FF 2px, transparent 1px)
+    `,
+        backgroundSize: "15px 15px",
+      }}
 
-      <div className="flex justify-center pt-4">
-        {Slides.map((item, index) => (
-          <span
-            key={item.toString()}
-            className={`inline-block w-2 h-2 rounded-full mx-1 ${index + 1 === current ? "bg-blue-600" : "bg-blue-300"}`}
-          />
+      className="flex flex-col h-screen items-center justify-center overflow-hidden " setApi={setApi}>
+      <HykoLogo />
+      <CarouselContent className="w-full ml-0">
+        {Slides.map((Item) => (
+          <CarouselItem key={Item.toString()} className="flex w-full justify-center items-center">
+            <Item />
+          </CarouselItem>
         ))}
+
+      </CarouselContent>
+      <div className="flex justify-center gap-2 titems-center">
+        <CarouselPrevious />
+        <div className="flex justify-center items-center">
+          {Slides.map((item, index) => (
+            <span
+              key={item.toString()}
+              className={`inline-block w-2 h-2 rounded-full mx-1 ${index + 1 === current ? "bg-blue-600" : "bg-blue-300"}`}
+            />
+          ))}
+        </div>
+        <CarouselNext />
       </div>
-    </div>
+    </Carousel>
   )
 }
