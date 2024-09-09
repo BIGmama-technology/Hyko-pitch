@@ -49,9 +49,9 @@ export function FaqSlide() {
         <AccordionTrigger className='text-left hover:no-underline'>
           <h2 className='text-lg font-bold md:text-2xl'>WHAT IS OUR VISION ?</h2>
         </AccordionTrigger>
-        <AccordionContent>
+        <AccordionContent className="text-blue-600">
           <ul >
-            <li className='text-muted-foreground text-sm md:text-base py-2' >
+            <li className='text-sm md:text-base py-2' >
               The future value of AI will not come from AI engineers or data scientists, it will come from field experts who will be able to combine their expertise with AI in order to solve daily problems.
             </li>
           </ul>
