@@ -21,6 +21,8 @@ export function PitchSlider() {
     OpeningSlide,
     ProblemSlide,
     SolutionSlide,
+    HykoSlide,
+    ClientsSlide
   ]
   const [api, setApi] = React.useState<CarouselApi>()
   const [current, setCurrent] = React.useState(0)
@@ -37,8 +39,9 @@ export function PitchSlider() {
     })
   }, [api])
 
+
   return (
-    <Carousel
+    <div
       style={{
         backgroundImage: `
       linear-gradient(to right, #E6F3FF 2px, transparent 1px),
@@ -46,29 +49,34 @@ export function PitchSlider() {
     `,
         backgroundSize: "15px 15px",
       }}
-
-      className="flex flex-col h-screen items-center justify-center overflow-hidden " setApi={setApi}>
+      className="h-screen"
+    >
+      <div className="h-16" />
       <HykoLogo />
-      <CarouselContent className="w-full ml-0">
-        {Slides.map((Item) => (
-          <CarouselItem key={Item.toString()} className="flex w-full justify-center items-center">
-            <Item />
-          </CarouselItem>
-        ))}
-
-      </CarouselContent>
-      <div className="flex justify-center gap-2 titems-center">
-        <CarouselPrevious />
-        <div className="flex justify-center items-center">
-          {Slides.map((item, index) => (
-            <span
-              key={item.toString()}
-              className={`inline-block w-2 h-2 rounded-full mx-1 ${index + 1 === current ? "bg-blue-600" : "bg-blue-300"}`}
-            />
+      <Carousel
+        orientation="horizontal"
+        className="w-full  overflow-hidden" setApi={setApi}>
+        <CarouselContent className="">
+          {Slides.map((Item, index) => (
+            <CarouselItem key={index} >
+              <Item />
+            </CarouselItem>
           ))}
+
+        </CarouselContent>
+        <div className="flex justify-center gap-2 titems-center">
+          <CarouselPrevious />
+          <div className="flex justify-center items-center">
+            {Slides.map((item, index) => (
+              <span
+                key={item.toString()}
+                className={`inline-block w-2 h-2 rounded-full mx-1 ${index + 1 === current ? "bg-blue-600" : "bg-blue-300"}`}
+              />
+            ))}
+          </div>
+          <CarouselNext />
         </div>
-        <CarouselNext />
-      </div>
-    </Carousel>
+      </Carousel>
+    </div >
   )
 }

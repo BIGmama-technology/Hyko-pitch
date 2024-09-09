@@ -7,10 +7,10 @@ export function ClientsSlide() {
     "e2OtBpoe2kE",
   ];
   return (
-    <div className="flex flex-col items-center justify-center text-blue-600">
+    <div className="flex flex-col items-center justify-center text-blue-600 max-h-[85vh] overflow-y-scroll">
       <div className="text-center">
         <h2 className="text-4xl font-bold mb-2 sm:mb-8">Our clients are Happy !</h2>
-        <div className="flex flex-wrap gap-2 sm:gap-6">
+        <div className="flex items-center justify-center flex-wrap gap-2 sm:gap-6">
           {videoIds.map((id, index) => (
             <iframe
               key={index}
