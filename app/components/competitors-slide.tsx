@@ -1,13 +1,17 @@
 export function Competitors() {
-  return <div className="overflow-y-scroll max-h-[80vh] text-blue-600 px-4">
+
+
+  return <div className="overflow-scroll w-full max-h-[80vh] text-blue-600 px-4 ">
     <h2 className="text-2xl sm:text-4xl font-bold mb-2 sm:mb-8 sm:text-center">
       Why are we better than our competitors?
     </h2>
     <p className="text-xl sm:text-2xl sm:text-center">
       We identified 7 competitors so far (production of customized artificial intelligence applications):
     </p>
-    <div className="mt-4">
-      <table className="w-full border-collapse">
+
+    <div className=""
+    >
+      <table className=" border-collapse">
         <thead>
           <tr className="bg-gray-100">
             <th className="border p-2 text-left">Feature</th>

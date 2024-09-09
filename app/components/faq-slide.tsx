@@ -8,7 +8,7 @@ export function FaqSlide() {
     <h2 className="text-2xl sm:text-2xl font-bold mb-2 sm:mb-8 ">What they usually ask ?</h2>
     <Accordion type="multiple">
       {faqContent.map(faq => (
-        <AccordionItem value={faq.title} key={faq.title} className='hover:bg-muted rounded-md sm:p-6 transition-all'>
+        <AccordionItem value={faq.title} key={faq.title} className='hover:bg-muted rounded-md  sm:p-6 transition-all'>
           <AccordionTrigger className='text-left hover:no-underline'>
             <h2 className='text-lg font-bold md:text-2xl'>{faq.title}</h2>
           </AccordionTrigger>

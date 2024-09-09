@@ -39,7 +39,6 @@ export function PitchSlider() {
     if (!api) {
       return
     }
-
     setCurrent(api.selectedScrollSnap() + 1)
 
     api.on("select", () => {
@@ -57,13 +56,13 @@ export function PitchSlider() {
     `,
         backgroundSize: "15px 15px",
       }}
-      className="h-screen overflow-hidden"
+      className="h-screen overflow-hidden flex flex-col"
     >
       <HykoLogo />
 
       <Carousel
         orientation="horizontal"
-        className="w-full  overflow-hidden h-full" setApi={setApi}>
+        className="w-full  overflow-hidden  " setApi={setApi}>
         <CarouselContent >
           {Slides.map((Item, index) => (
             <CarouselItem key={index} >
@@ -72,9 +71,9 @@ export function PitchSlider() {
           ))}
 
         </CarouselContent>
-        <div className="flex justify-center gap-2 items-center">
+        <div className="flex justify-center p-2 gap-2 items-center ">
           <CarouselPrevious />
-          <div className="flex justify-center h-full items-center">
+          <div className="flex justify-center  items-center">
             {Slides.map((item, index) => (
               <span
                 key={item.toString()}
