@@ -1,6 +1,6 @@
 export default function OpeningSlide() {
   return (
-    <div className="flex w-full flex-col items-center gap-y-2 sm:gap-y-8 text-blue-600 justify-center px-4 sm:px-0">
+    <div className="flex w-full h-full flex-col items-center gap-y-2 sm:gap-y-8 text-blue-600 justify-center px-4">
       <h2 className="text-2xl sm:text-4xl font-bold mb-2 sm:mb-8 sm:text-center">
         We have been building custom AI applications as craftsmen for 10 years
       </h2>

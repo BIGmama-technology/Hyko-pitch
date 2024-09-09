@@ -1,5 +1,5 @@
 export function ProblemSlide() {
-  return (<div className="flex w-full flex-col items-center justify-center  text-blue-600 p-8">
+  return (<div className="flex w-full h-full flex-col items-center justify-center  text-blue-600 px-4 ">
     <h2 className="text-start text-2xl md:text-4xl font-bold mb-8">
       What did we learn from 10 years in the ground field ?
     </h2>

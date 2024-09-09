@@ -15,6 +15,8 @@ import { HykoSlide } from "./hyko-slide"
 import { ClientsSlide } from "./clients-slide"
 import * as React from 'react'
 import HykoLogo from "./Hykologo"
+import { Team } from "./team-slide"
+import { Competitors } from "./competitors-slide"
 
 export function PitchSlider() {
   const Slides = [
@@ -22,7 +24,9 @@ export function PitchSlider() {
     ProblemSlide,
     SolutionSlide,
     HykoSlide,
-    ClientsSlide
+    ClientsSlide,
+    Team
+    , Competitors
   ]
   const [api, setApi] = React.useState<CarouselApi>()
   const [current, setCurrent] = React.useState(0)
@@ -49,14 +53,14 @@ export function PitchSlider() {
     `,
         backgroundSize: "15px 15px",
       }}
-      className="h-screen"
+      className="h-screen overflow-hidden"
     >
-      <div className="h-16" />
       <HykoLogo />
+
       <Carousel
         orientation="horizontal"
-        className="w-full  overflow-hidden" setApi={setApi}>
-        <CarouselContent className="">
+        className="w-full  overflow-hidden h-full" setApi={setApi}>
+        <CarouselContent >
           {Slides.map((Item, index) => (
             <CarouselItem key={index} >
               <Item />
@@ -64,9 +68,9 @@ export function PitchSlider() {
           ))}
 
         </CarouselContent>
-        <div className="flex justify-center gap-2 titems-center">
+        <div className="flex justify-center gap-2 items-center">
           <CarouselPrevious />
-          <div className="flex justify-center items-center">
+          <div className="flex justify-center h-full items-center">
             {Slides.map((item, index) => (
               <span
                 key={item.toString()}
