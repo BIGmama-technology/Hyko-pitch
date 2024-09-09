@@ -19,9 +19,8 @@ export function BusinessModel() {
     </div>
     <div className="mt-8">
       <h2 className="text-xl sm:text-4xl font-bold   text-center">
-        Our Business Model:
+        SaaS with two kinds of licenses
       </h2>
-      <p className="text-xl sm:text-2xl text-center  textblue-500 ">(SaaS with two kinds of licenses)</p>
     </div>
     <div className="grid grid-cols-2 w-full my-4  sm:my-10   justify-between">
       <div>
