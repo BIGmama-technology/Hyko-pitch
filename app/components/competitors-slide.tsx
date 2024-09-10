@@ -11,8 +11,12 @@ export function Competitors() {
     </p>
     <a
       href='https://docs.google.com/spreadsheets/d/1wKidLGGqLmWIPtpyyXwuhI-r_1ne54drOUW70W0Co9o/edit?usp=sharing'
-      className="text-xl sm:text-2xl text-center underline mt-8">
-      Google sheets comparision with our competitors
+      className="text-xl sm:text-2xl text-center   mt-8 flex gap-2 items-center justify-center "
+    >
+      <p>
+        competitors
+      </p>
+      <img src='/google-sheet.svg' alt='google sheet' className="w-8 h-8" />
     </a >
   </div>
 }
