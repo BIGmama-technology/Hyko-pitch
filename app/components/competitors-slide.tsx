@@ -1,4 +1,4 @@
-import { MoveRight } from "lucide-react";
+import { ExternalLink, Link, MoveRight } from "lucide-react";
 
 export function Competitors() {
 
@@ -19,8 +19,7 @@ export function Competitors() {
         List of
         competitors
       </p>
-      <MoveRight className='h-8 w-8' />
-      <img src='/google-sheet.svg' alt='google sheet' className="w-8 h-8" />
+      <ExternalLink className='h-8 w-8' />
     </a >
   </div>
 }
