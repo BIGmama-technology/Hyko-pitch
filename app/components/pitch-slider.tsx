@@ -1,24 +1,25 @@
-'use client'
+"use client";
 
 import {
   Carousel,
-  CarouselApi,
+  type CarouselApi,
   CarouselContent,
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
-} from "@/components/ui/carousel"
-import OpeningSlide from "./slide-1"
-import { ProblemSlide } from "./problem-slide"
-import { SolutionSlide } from "./solution-slide"
-import { HykoSlide } from "./hyko-slide"
-import { ClientsSlide } from "./clients-slide"
-import * as React from 'react'
-import HykoLogo from "./Hykologo"
-import { Team } from "./team-slide"
-import { Competitors } from "./competitors-slide"
-import { BusinessModel } from "./business-model-slide"
-import { FaqSlide } from "./faq-slide"
+} from "@/components/ui/carousel";
+
+import * as React from "react";
+import { BusinessModel } from "./business-model-slide";
+import { ClientsSlide } from "./clients-slide";
+import { Competitors } from "./competitors-slide";
+import { FaqSlide } from "./faq-slide";
+import { HykoSlide } from "./hyko-slide";
+import HykoLogo from "./Hykologo";
+import { ProblemSlide } from "./problem-slide";
+import OpeningSlide from "./slide-1";
+import { SolutionSlide } from "./solution-slide";
+import { Team } from "./team-slide";
 
 export function PitchSlider() {
   const Slides = [
@@ -27,25 +28,24 @@ export function PitchSlider() {
     SolutionSlide,
     HykoSlide,
     ClientsSlide,
-    Team
-    , Competitors
-    , BusinessModel
-    , FaqSlide
-  ]
-  const [api, setApi] = React.useState<CarouselApi>()
-  const [current, setCurrent] = React.useState(0)
+    Team,
+    Competitors,
+    BusinessModel,
+    FaqSlide,
+  ];
+  const [api, setApi] = React.useState<CarouselApi>();
+  const [current, setCurrent] = React.useState(0);
 
   React.useEffect(() => {
     if (!api) {
-      return
+      return;
     }
-    setCurrent(api.selectedScrollSnap() + 1)
+    setCurrent(api.selectedScrollSnap() + 1);
 
     api.on("select", () => {
-      setCurrent(api.selectedScrollSnap() + 1)
-    })
-  }, [api])
-
+      setCurrent(api.selectedScrollSnap() + 1);
+    });
+  }, [api]);
 
   return (
     <div
@@ -62,14 +62,15 @@ export function PitchSlider() {
 
       <Carousel
         orientation="horizontal"
-        className="w-full  overflow-hidden  " setApi={setApi}>
-        <CarouselContent >
+        className="w-full  overflow-hidden  "
+        setApi={setApi}
+      >
+        <CarouselContent>
           {Slides.map((Item, index) => (
-            <CarouselItem key={index} >
+            <CarouselItem key={index}>
               <Item />
             </CarouselItem>
           ))}
-
         </CarouselContent>
         <div className="flex justify-center p-2 gap-2 items-center ">
           <CarouselPrevious />
@@ -84,6 +85,6 @@ export function PitchSlider() {
           <CarouselNext />
         </div>
       </Carousel>
-    </div >
-  )
+    </div>
+  );
 }

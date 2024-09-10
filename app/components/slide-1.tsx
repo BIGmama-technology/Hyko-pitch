@@ -8,8 +8,9 @@ export default function OpeningSlide() {
         Kwanko - Arkia - Ratp - Total - Sonatrach - Ooredoo - Yourscrib
       </p>
       <p className="text-xl sm:text-2xl  mt-2 sm:mt-10 sm:text-center">
-        We wanted to scale up and automate how we build these applications
+        We decided in 2022 to move from consulting to SaaS: allowing our users
+        to build AI agents by themselves !
       </p>
     </div>
-  )
+  );
 }
