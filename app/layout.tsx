@@ -5,8 +5,8 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Hyko.ai pitch",
-  description: "Hyko.ai is a very cool AI auotmation platform",
+  title: "Hyko Pitch Deck",
+  description: "AI tools for stress free life. automate your tasks with Hyko ai tools.",
 };
 
 export default function RootLayout({
