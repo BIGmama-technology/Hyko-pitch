@@ -1,8 +1,9 @@
+import { ScrollArea } from "@/components/ui/scroll-area";
 import { ExternalLink } from "lucide-react";
 
 export function Competitors() {
   return (
-    <div className="w-full  h-full flex flex-col justify-center text-center items-center max-h-[75vh] sm:max-h-[80vh] text-blue-600 px-4 ">
+    <div className="w-full  h-full flex flex-col justify-center text-center items-center  text-blue-600 px-4 ">
       <h2 className="text-2xl sm:text-4xl font-bold mb-8 ">
         Why are we better than our competitors?
       </h2>
@@ -19,6 +20,10 @@ export function Competitors() {
         <p>List of competitors</p>
         <ExternalLink className="h-8 w-8" />
       </a>
+      <iframe
+        src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQgyGi73xSsMpZf9ZbUjLH1p4sLGYVwVtNQLp_F8RU-VxFJJhQ1k_puqSK4bTEGDw7dHlMvOTprvw6B/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false"
+        className="h-[45%] w-[90%] sm:w-[50%] overflow-hidden">
+      </iframe>
     </div>
   );
 }
