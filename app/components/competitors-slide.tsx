@@ -13,6 +13,7 @@ export function Competitors() {
     <a
       href='https://docs.google.com/spreadsheets/d/1wKidLGGqLmWIPtpyyXwuhI-r_1ne54drOUW70W0Co9o/edit?usp=sharing'
       className="text-xl sm:text-2xl text-center hover:underline  mt-8 flex gap-3 items-center justify-center "
+      target="_blank"
     >
       <p>
         List of
