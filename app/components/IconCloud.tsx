@@ -2,13 +2,9 @@
 
 import { useEffect, useMemo, useState } from "react";
 import { useTheme } from "next-themes";
-import {
-  Cloud,
-  fetchSimpleIcons,
-  ICloud,
-  renderSimpleIcon,
-  SimpleIcon,
-} from "react-icon-cloud";
+import { Cloud, fetchSimpleIcons, renderSimpleIcon } from "react-icon-cloud";
+
+import type { SimpleIcon, ICloud } from "react-icon-cloud";
 
 export const cloudProps: Omit<ICloud, "children"> = {
   containerProps: {
@@ -22,8 +18,8 @@ export const cloudProps: Omit<ICloud, "children"> = {
   },
   canvasProps: {
     style: {
-      height: "20vh"
-    }
+      height: "20vh",
+    },
   },
   options: {
     reverse: true,
@@ -86,8 +82,6 @@ export default function IconCloud({ iconSlugs }: DynamicCloudProps) {
 
   return (
     // @ts-ignore
-    <Cloud {...cloudProps}>
-      <>{renderedIcons}</>
-    </Cloud>
+    <Cloud {...cloudProps}>{renderedIcons}</Cloud>
   );
 }
