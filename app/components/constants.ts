@@ -51,16 +51,14 @@ export const teamContent: MemberProps[] = [
     role: "Strategic Advisor",
     image: "/team/3ami-nacer.png",
   },
+];
+
+export const boardMembers: MemberProps[] = [
   {
     fullname: "Mahdi KALLEL",
     role: "Scientific Advisor",
     image: "/team/mahdi.png",
   },
-
-];
-
-export const boardMembers: MemberProps[] = [
-
   {
     fullname: "Jacques VINCENT",
     role: "Share holder",

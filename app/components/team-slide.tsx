@@ -32,7 +32,6 @@ export function Team() {
     <p className="text-xl sm:text-2xl my-2">
       Board members
     </p>
-
     <div className="grid  grid-cols-1 justify-center  gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
       {boardMembers.map(member => (
         <div
