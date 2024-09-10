@@ -13,7 +13,7 @@ export function ClientsSlide() {
         {videoIds.map((id) => (
           <iframe
             key={id}
-            className="min-h-64"
+            className="min-h-64 aspect-[16_/_9]"
             src={`https://www.youtube.com/embed/${id}`}
             allowFullScreen
           ></iframe>
