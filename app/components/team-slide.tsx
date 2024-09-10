@@ -4,7 +4,7 @@ import Link from "next/link";
 import { LinkedinIcon } from "lucide-react";
 
 export function Team() {
-  return <div className='w-full max-h-[75vh] sm:max-h-[80vh] overflow-y-scroll text-blue-600 px-4'>
+  return <div className='w-full max-h-[75vh] sm:max-h-[80vh] overflow-y-scroll sm:overflow-y-hidden text-blue-600 px-4'>
 
     <h2 className="text-2xl sm:text-4xl font-bold mb-8 text-center">Who are we ?</h2>
     <div className="grid  grid-cols-1 justify-center  gap-6 sm:grid-cols-2 lg:grid-cols-6">

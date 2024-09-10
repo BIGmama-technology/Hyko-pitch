@@ -7,13 +7,13 @@ export function ClientsSlide() {
     "e2OtBpoe2kE",
   ];
   return (
-    <div className="flex w-full flex-col items-center justify-center text-blue-600 max-h-[75vh] sm:max-h-[80vh]  px-4 overflow-y-scroll ">
+    <div className="flex w-full flex-col items-center justify-center text-blue-600 max-h-[75vh] sm:max-h-[80vh]  px-4 overflow-y-scroll sm:overflow-y-hidden ">
       <h2 className="text-2xl sm:text-4xl font-bold text-center mb-8">Our clients are Happy !</h2>
-      <div className="grid justify-center justify-items-center items-center md:grid-cols-3 sm:grid-cols-2 grid-col-1 gap-3 ">
+      <div className="grid justify-center justify-items-center items-center lg:grid-cols-3 md:grid-cols-2  grid-col-1 gap-3 ">
         {videoIds.map((id) => (
           <iframe
             key={id}
-            className="aspect-[16_/_9]"
+            className="min-h-64"
             src={`https://www.youtube.com/embed/${id}`}
             allowFullScreen
           ></iframe>
