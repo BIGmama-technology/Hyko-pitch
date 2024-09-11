@@ -15,7 +15,6 @@ export function Competitors() {
           className="h-[80%] sm:h-[70%] md:h-[60%]  md:w-[50%] overflow-hidden">
         </iframe>
 
-        <a href="mailto:hk@big-mama.io" className="text-blue-600 text-lg">Contact: Hk@big-mama.io</a>
       </div>
     </div>
   );

@@ -6,7 +6,6 @@ export function Team() {
     <h2 className="text-2xl sm:text-3xl font-bold mb-8 text-center">Who are we ?</h2>
     <div className="overflow-y-auto">
 
-      <a href="mailto:hk@big-mama.io" className="self-start text-blue-600 text-lg ">Contact: Hk@big-mama.io</a>
       <p className="text-xl sm:text-2xl my-2">
         Team members
       </p>
