@@ -1,9 +1,12 @@
 export function HykoSlide() {
-  const gifs = ["/connect.gif", "/loop_mode.gif", "/appbook.gif"];
+  const gifs = ["/connect.gif", "/loop_mode.gif", "/appbook.gif", '/features/cash-api.gif', '/features/upload-your-files.gif', '/features/connect-your-apps.gif'];
   const descriptions = [
     "Connect nodes",
-    "Advanced features",
+    "parallel workflows",
     "Share simple UI",
+    'Cash API results',
+    'Upload your files',
+    'Connect your apps'
   ];
   return (
     <div className="max-h-[75vh] sm:max-h-[80vh]  h-full px-4 mx-4 flex flex-col justify-center items-center">
@@ -19,6 +22,8 @@ export function HykoSlide() {
             <img key={gif} src={gif} alt={descriptions[idx]} />
           </div>
         ))}
+
+        <a href="mailto:hk@big-mama.io" className="self-start text-blue-600 text-lg">Contact: Hk@big-mama.io</a>
       </div>
     </div>
   );

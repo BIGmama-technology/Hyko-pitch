@@ -9,10 +9,14 @@ export function Competitors() {
         We identified 7 competitors so far (production of customized artificial
         intelligence applications)
       </p>
-      <iframe
-        src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQgyGi73xSsMpZf9ZbUjLH1p4sLGYVwVtNQLp_F8RU-VxFJJhQ1k_puqSK4bTEGDw7dHlMvOTprvw6B/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false"
-        className="h-[45%] w-[90%] sm:w-[50%] overflow-hidden">
-      </iframe>
+      <div className="w-[90vw]  h-[100%] flex flex-col gap-2 items-center">
+        <iframe
+          src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQgyGi73xSsMpZf9ZbUjLH1p4sLGYVwVtNQLp_F8RU-VxFJJhQ1k_puqSK4bTEGDw7dHlMvOTprvw6B/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false"
+          className="h-[80%] sm:h-[70%] md:h-[60%]  md:w-[50%] overflow-hidden">
+        </iframe>
+
+        <a href="mailto:hk@big-mama.io" className="text-blue-600 text-lg">Contact: Hk@big-mama.io</a>
+      </div>
     </div>
   );
 }

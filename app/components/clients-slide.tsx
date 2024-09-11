@@ -16,19 +16,24 @@ export function ClientsSlide() {
       <p className="text-xl sm:text-2xl mb-8">
         Our happy clients / beta users:
       </p>
-      <ScrollArea className="w-[90vw] ">
-        <div className="flex w-[90vw] overflow-x-auto gap-3">
-          {videoIds.map((id) => (
-            <iframe
-              key={id}
-              className="min-h-52 min-w-80 sm:min-w-80 sm:min-h-64"
-              src={`https://www.youtube.com/embed/${id}`}
-              title="client youtube video"
-              allowFullScreen
-            />
-          ))}
+      <ScrollArea >
+        <div className="w-[90vw] flex flex-col gap-5">
+          <div className="flex w-[90vw] overflow-x-auto gap-3">
+            {videoIds.map((id) => (
+              <iframe
+                key={id}
+                className="min-h-52 min-w-80 sm:min-w-80 sm:min-h-64"
+                src={`https://www.youtube.com/embed/${id}`}
+                title="client youtube video"
+                allowFullScreen
+              />
+            ))}
+          </div>
+
+          <a href="mailto:hk@big-mama.io" className="self-start text-blue-600 text-lg ">Contact: Hk@big-mama.io</a>
         </div>
       </ScrollArea>
+
     </div >
   );
 }

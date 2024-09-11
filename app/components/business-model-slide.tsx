@@ -40,13 +40,13 @@ export function BusinessModel() {
         Our figures
         more details here
       </span>
-
       <ExternalLink className="size-8" />
     </a>
-    <div className="flex  justify-center w-[90vw] h-72 overflow-y-auto">
+    <div className="flex flex-col items-center w-[90vw] h-72 sm:h-96 gap-2 overflow-y-auto">
       <iframe className="min-h-72 max-w-fit  px-4 w-[90%]"
         src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT_4gbWduXx0DtCVEcNXFy420fFs6KDuk3nonM_fb0EuEJNjhXKQK9Rbbl4PX6Fg6IjIVs_7hAQFGlm/pubhtml?gid=1493678232&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
-    </div>
 
+      <a href="mailto:hk@big-mama.io" className=" text-blue-600 text-lg ">Contact: Hk@big-mama.io</a>
+    </div>
   </div>
 }

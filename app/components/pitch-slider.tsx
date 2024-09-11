@@ -92,7 +92,9 @@ export function PitchSlider() {
             ))}
           </div>
           <CarouselNext />
+
         </div>
+
       </Carousel>
     </div>
   );
