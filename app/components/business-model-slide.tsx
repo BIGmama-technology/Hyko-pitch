@@ -6,7 +6,6 @@ export function BusinessModel() {
     <h2 className="text-2xl sm:text-3xl font-bold  text-center">
       Our Business Model:
     </h2>
-    <Separator className='h-[1px] bg-[#B0C4DE] w-full mt-4' />
     <div className="mt-6">
       <h2 className="text-xl sm:text-3xl font-bold   text-center">
         SaaS with two kinds of licenses
@@ -20,7 +19,7 @@ export function BusinessModel() {
         </div>
         <h2 className="text-xl sm:text-3xl font-bold   text-center">
           Do it yourself license:       </h2>
-        <p className="text-xl sm:text-2xl text-center  textblue-500 "> €49</p>
+        <p className="text-xl sm:text-2xl text-center  textblue-500 "> €49 per month</p>
       </div>
       <div >
         <div className="flex justify-center my-2">
@@ -29,15 +28,19 @@ export function BusinessModel() {
         <h2 className="text-xl sm:text-3xl font-bold  mx-auto  text-center">
           Custom license:
         </h2>
-        <p className="text-xl sm:text-2xl text-center mx-auto textblue-500 max-w-md">  €1,000</p>
+        <p className="text-xl sm:text-2xl text-center mx-auto textblue-500 max-w-md">  €1,000 per month</p>
       </div>
     </div>
+
+    <Separator className='h-[4px] bg-[#B0C4DE] w-full my-4' />
     <a
       target="_blank"
       href='https://docs.google.com/spreadsheets/d/1edTf-pW4zc2g7-5oyrUIL1NiFsRkD5R0OemxzRUdtGQ/edit?usp=sharing' className="flex gap-2 items-center justify-center  text-xl sm:text-3xl font-bold   text-center mb-4 ">
       <span>
         Our figures
+        more details here
       </span>
+
       <ExternalLink className="size-8" />
     </a>
     <div className="flex  justify-center w-[90vw] h-72 overflow-y-auto">

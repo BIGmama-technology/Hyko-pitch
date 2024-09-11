@@ -4,8 +4,8 @@ export function ProblemSlide1() {
       What did we learn from 10 years in the ground field ? 1-2
     </h2>
     <p className="font-medium text-3xl "> Agents are the future of AI: why?</p>
-    <p className=" text-xl md:text-2xl py-2 ">Because they offer a solution to th biggest ai issues:</p>
-    <p className=" text-xl md:text-2xl ">They make ai: </p>
+    <p className=" text-xl md:text-2xl py-2 ">Because they offer a solution to the biggest AI issues:</p>
+    <p className=" text-xl md:text-2xl ">Agents make AI: </p>
     <ul className="text-xl md:text-2xl space-y-1 max-w-6xl mx-auto ">
       <li>Afordable</li>
       <li>Explicable</li>

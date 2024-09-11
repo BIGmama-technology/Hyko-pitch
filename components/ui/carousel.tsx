@@ -206,7 +206,7 @@ const CarouselPrevious = React.forwardRef<
       variant={variant}
       size={size}
       className={cn(
-        "  h-12 w-12 rounded-full hover:bg-muted",
+        "  h-8 w-8 rounded-full hover:bg-muted",
         orientation === "horizontal"
           ? " "
           : " rotate-90",
@@ -235,7 +235,7 @@ const CarouselNext = React.forwardRef<
       variant={variant}
       size={size}
       className={cn(
-        "h-12 w-12 rounded-full hover:bg-muted",
+        "h-8 w-8 rounded-full hover:bg-muted",
         orientation === "horizontal"
           ? " "
           : " rotate-90",

@@ -10,7 +10,7 @@ export function ProblemSlide() {
 
     </ul>
 
-    <p className="font-medium text-3xl py-12"> Our solution: Hyko.ai</p>
+    <p className="font-medium text-3xl py-12 flex gap-2"><img src='/logo.svg' alt='hyko.ai' /> Our solution: Hyko.ai</p>
   </div>
   )
 }
