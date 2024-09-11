@@ -78,8 +78,11 @@ export function PitchSlider() {
             {Slides.map((item, index) => (
               <span
                 key={item.toString()}
-                className={`inline-block w-2 h-2 rounded-full mx-1 ${index + 1 === current ? "bg-blue-600" : "bg-blue-300"}`}
-              />
+                className={`inline-block px-4 py-2 rounded-full text-white mx-1 hover:cursor-pointer ${index + 1 === current ? "bg-blue-600" : "bg-blue-300"}`}
+                onClick={() => api?.scrollTo(index)}
+              >
+                {index + 1}
+              </span>
             ))}
           </div>
           <CarouselNext />

@@ -20,7 +20,7 @@ export function ClientsSlide() {
         Our happy clients / beta users
       </p>
       <ScrollArea className="w-[90vw] ">
-        <div className="flex w-[90vw] overflow-x-scroll gap-3">
+        <div className="flex w-[90vw] overflow-x-auto gap-3">
           {videoIds.map((id) => (
             <iframe
               key={id}

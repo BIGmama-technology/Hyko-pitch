@@ -20,6 +20,5 @@ export function FaqSlide() {
         </AccordionItem>
       ))}
     </Accordion>
-
   </div>
 }
