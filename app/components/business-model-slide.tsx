@@ -4,7 +4,7 @@ import { ExternalLink } from "lucide-react"
 export function BusinessModel() {
   return <div className="flex w-full h-full flex-col items-center  overflow-y-scroll  text-blue-600 justify-center px-4 max-h-[75vh] sm:max-h-[80vh]">
     <h2 className="text-2xl sm:text-3xl font-bold  text-center">
-      Our Business Model:
+      Our Business Model(Our worst case scenario):
     </h2>
     <div className="mt-6">
       <h2 className="text-xl sm:text-3xl font-bold   text-center">
@@ -35,9 +35,9 @@ export function BusinessModel() {
     <Separator className='h-[4px] bg-[#B0C4DE] w-full my-4' />
     <a
       target="_blank"
-      href='https://docs.google.com/spreadsheets/d/e/2PACX-1vT_4gbWduXx0DtCVEcNXFy420fFs6KDuk3nonM_fb0EuEJNjhXKQK9Rbbl4PX6Fg6IjIVs_7hAQFGlm/pubhtml?gid=1493678232&amp;single=true&amp;widget=true&amp;headers=false' className="flex gap-2 items-center justify-center  text-xl sm:text-3xl font-bold   text-center mb-4 ">
+      href='https://docs.google.com/spreadsheets/d/1edTf-pW4zc2g7-5oyrUIL1NiFsRkD5R0OemxzRUdtGQ/edit?usp=sharing' className="flex gap-2 items-center justify-center  text-xl sm:text-3xl font-bold   text-center mb-4 ">
       <span>
-        Our figures
+        Our figures,
         more details here
       </span>
       <ExternalLink className="size-8" />
