@@ -40,8 +40,8 @@ export function BusinessModel() {
       </span>
       <ExternalLink className="size-8" />
     </a>
-    <div className="flex  justify-center w-[90vw] h-96 overflow-y-auto">
-      <iframe className="min-h-96 max-w-fit px-4 w-[90%]"
+    <div className="flex  justify-center w-[90vw] h-72 overflow-y-auto">
+      <iframe className="min-h-72 max-w-fit  px-4 w-[90%]"
         src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTWHXm34G4gfyMAziQhydAGy2ruqnK5yzXy107WfwXGf3utRSVFaeZeMZr3wnTJliQtvZ3axOi8zTob/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
     </div>
 
