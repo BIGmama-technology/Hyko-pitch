@@ -3,7 +3,7 @@ export function ProblemSlide() {
     <h2 className=" text-2xl sm:text-4xl font-bold mb-8">
       What did we learn from 10 years in the ground field ? 2-2
     </h2>
-    <ul className="text-xl md:text-2xl space-y-6 max-w-6xl mx-auto ">
+    <ul className="text-xl md:text-2xl space-y-6 max-w-6xl mx-auto  ">
       <li>👥 People cannot formulate their problems clearly in few words.</li>
       <li>🔧 It's hard to articulate a technical solution for a problem.</li>
       <li>🔗 It's difficulte to materilize and share the solution.</li>

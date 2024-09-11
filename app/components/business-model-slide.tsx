@@ -35,7 +35,7 @@ export function BusinessModel() {
     <Separator className='h-[4px] bg-[#B0C4DE] w-full my-4' />
     <a
       target="_blank"
-      href='https://docs.google.com/spreadsheets/d/1edTf-pW4zc2g7-5oyrUIL1NiFsRkD5R0OemxzRUdtGQ/edit?usp=sharing' className="flex gap-2 items-center justify-center  text-xl sm:text-3xl font-bold   text-center mb-4 ">
+      href='https://docs.google.com/spreadsheets/d/e/2PACX-1vT_4gbWduXx0DtCVEcNXFy420fFs6KDuk3nonM_fb0EuEJNjhXKQK9Rbbl4PX6Fg6IjIVs_7hAQFGlm/pubhtml?gid=1493678232&amp;single=true&amp;widget=true&amp;headers=false' className="flex gap-2 items-center justify-center  text-xl sm:text-3xl font-bold   text-center mb-4 ">
       <span>
         Our figures
         more details here
@@ -45,7 +45,7 @@ export function BusinessModel() {
     </a>
     <div className="flex  justify-center w-[90vw] h-72 overflow-y-auto">
       <iframe className="min-h-72 max-w-fit  px-4 w-[90%]"
-        src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTWHXm34G4gfyMAziQhydAGy2ruqnK5yzXy107WfwXGf3utRSVFaeZeMZr3wnTJliQtvZ3axOi8zTob/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
+        src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT_4gbWduXx0DtCVEcNXFy420fFs6KDuk3nonM_fb0EuEJNjhXKQK9Rbbl4PX6Fg6IjIVs_7hAQFGlm/pubhtml?gid=1493678232&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
     </div>
 
   </div>
