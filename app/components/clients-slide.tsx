@@ -11,13 +11,10 @@ export function ClientsSlide() {
   return (
     <div className="flex  w-full flex-col items-center justify-center text-blue-600 max-h-[75vh] h-full sm:max-h-[80vh]  px-4">
       <h2 className="text-2xl sm:text-4xl font-bold text-center mb-2">
-        Our clients are Happy !
-      </h2>
-      <p className="text-xl sm:text-2xl">
         Traction:
-      </p>
+      </h2>
       <p className="text-xl sm:text-2xl mb-8">
-        Our happy clients / beta users
+        Our happy clients / beta users:
       </p>
       <ScrollArea className="w-[90vw] ">
         <div className="flex w-[90vw] overflow-x-auto gap-3">

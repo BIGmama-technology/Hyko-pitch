@@ -20,10 +20,12 @@ import { ProblemSlide } from "./problem-slide";
 import OpeningSlide from "./slide-1";
 import { SolutionSlide } from "./solution-slide";
 import { Team } from "./team-slide";
+import { ProblemSlide1 } from "./problem-slide-1";
 
 export function PitchSlider() {
   const Slides = [
     OpeningSlide,
+    ProblemSlide1,
     ProblemSlide,
     SolutionSlide,
     HykoSlide,
@@ -40,6 +42,10 @@ export function PitchSlider() {
     if (!api) {
       return;
     }
+    window.addEventListener('keydown', (event) => {
+      if (event.key === 'ArrowLeft') api.scrollPrev()
+      if (event.key === "ArrowRight") api.scrollNext()
+    })
     setCurrent(api.selectedScrollSnap() + 1);
 
     api.on("select", () => {
@@ -78,7 +84,7 @@ export function PitchSlider() {
             {Slides.map((item, index) => (
               <span
                 key={item.toString()}
-                className={`inline-block px-4 py-2 rounded-full text-white mx-1 hover:cursor-pointer ${index + 1 === current ? "bg-blue-600" : "bg-blue-300"}`}
+                className={`inline-block px-2 py-1 rounded-full text-white mx-1 hover:cursor-pointer ${index + 1 === current ? "bg-blue-600" : "bg-blue-300"}`}
                 onClick={() => api?.scrollTo(index)}
               >
                 {index + 1}

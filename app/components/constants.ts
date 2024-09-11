@@ -46,18 +46,19 @@ export const teamContent: MemberProps[] = [
     role: "Product Designer ",
     image: "/team/darine.JPG",
   },
+
   {
-    fullname: "Abderrahmane Hadj-Nacer",
-    role: "Strategic Advisor",
-    image: "/team/3ami-nacer.png",
+    fullname: "Mahdi KALLEL",
+    role: "Scientific Advisor",
+    image: "/team/mahdi.png",
   },
 ];
 
 export const boardMembers: MemberProps[] = [
   {
-    fullname: "Mahdi KALLEL",
-    role: "Scientific Advisor",
-    image: "/team/mahdi.png",
+    fullname: "Abderrahmane Hadj-Nacer",
+    role: "Strategic Advisor",
+    image: "/team/3ami-nacer.png",
   },
   {
     fullname: "Jacques VINCENT",

@@ -1,10 +1,11 @@
-import { ScrollArea } from "@/components/ui/scroll-area";
+import { Separator } from "@/components/ui/separator"
 
 export function BusinessModel() {
   return <div className="flex w-full h-full flex-col items-center  overflow-y-scroll  text-blue-600 justify-center px-4 max-h-[75vh] sm:max-h-[80vh]">
     <h2 className="text-2xl sm:text-3xl font-bold  text-center">
       Our Business Model:
     </h2>
+    <Separator className="w-full h-[4px] my-2" />
     <div className="mt-8">
       <h2 className="text-xl sm:text-3xl font-bold   text-center">
         SaaS with two kinds of licenses
@@ -33,8 +34,8 @@ export function BusinessModel() {
     <h2 className="text-xl sm:text-3xl font-bold   text-center mb-2">
       Our figures
     </h2>
-    <div className="flex  justify-center w-[90vw] h-96 overflow-y-auto ">
-      <iframe className="min-h-96 w-[90%] "
+    <div className="flex  justify-center w-[90vw] h-96 overflow-y-auto">
+      <iframe className="min-h-96 w-[90%]"
         src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT_4gbWduXx0DtCVEcNXFy420fFs6KDuk3nonM_fb0EuEJNjhXKQK9Rbbl4PX6Fg6IjIVs_7hAQFGlm/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
     </div>
 
