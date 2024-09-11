@@ -29,7 +29,6 @@ export function ClientsSlide() {
               />
             ))}
           </div>
-
           <a href="mailto:hk@big-mama.io" className="self-start text-blue-600 text-lg ">Contact: Hk@big-mama.io</a>
         </div>
       </ScrollArea>
