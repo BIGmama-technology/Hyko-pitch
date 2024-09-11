@@ -42,15 +42,18 @@ export function PitchSlider() {
     if (!api) {
       return;
     }
-    window.addEventListener('keydown', (event) => {
-      if (event.key === 'ArrowLeft') {
-        return api.scrollPrev()
+    document.addEventListener('keydown', (event) => {
+      const focusedElement = document.activeElement;
+
+      if (focusedElement?.tagName !== 'BUTTON') {
+        if (event.key === 'ArrowLeft') {
+          return api.scrollPrev();
+        }
+        if (event.key === 'ArrowRight') {
+          return api.scrollNext();
+        }
       }
-      if (event.key === "ArrowRight") {
-        return api.scrollNext()
-      }
-    })
-    setCurrent(api.selectedScrollSnap() + 1);
+    }); setCurrent(api.selectedScrollSnap() + 1);
 
     api.on("select", () => {
       setCurrent(api.selectedScrollSnap() + 1);
@@ -85,7 +88,7 @@ export function PitchSlider() {
         </CarouselContent>
         <div className="flex flex-col justify-center p-2 gap-2 items-center mx-4">
 
-          {current >= 8 && current !== 10 ? <a href="mailto:hk@big-mama.io" className="text-center sm:self-end   col-span-1 text-blue-600 text-lg">Contact: Hk@big-mama.io</a> : null}
+          {current >= 8 && current !== 10 ? <a href="mailto:hk@big-mama.io" className="text-center sm:self-end   col-span-1 text-blue-600 text-lg">Contact: Hk@big-mama.io</a> : <div className="h-[1.75rem]" />}
           <div className="flex col-span-2  justify-end items-center gap-2">
             <CarouselPrevious />
             <div className="flex justify-center  items-center">
