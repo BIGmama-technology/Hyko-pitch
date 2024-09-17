@@ -1,12 +1,19 @@
 export function HykoSlide() {
-  const gifs = ["/connect.gif", "/loop_mode.gif", "/appbook.gif", '/features/cash-api.gif', '/features/upload-your-files.gif', '/features/connect-your-apps.gif'];
+  const gifs = [
+    "/connect.gif",
+    "/loop_mode.gif",
+    "/appbook.gif",
+    "/features/cache.gif",
+    "/features/upload-your-files.gif",
+    "/features/connect-your-apps.gif",
+  ];
   const descriptions = [
     "Connect nodes",
     "parallel workflows",
     "Share simple UI",
-    'Cash API results',
-    'Upload your files',
-    'Connect your apps'
+    "Cache results",
+    "Upload your files",
+    "Connect your apps",
   ];
   return (
     <div className="max-h-[75vh] sm:max-h-[80vh]  h-full px-4 mx-4 flex flex-col justify-center items-center">
@@ -22,9 +29,7 @@ export function HykoSlide() {
             <img key={gif} src={gif} alt={descriptions[idx]} />
           </div>
         ))}
-
       </div>
-
     </div>
   );
 }
