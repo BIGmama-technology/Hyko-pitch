@@ -5,8 +5,8 @@ export function Competitors() {
         Why are we better than our competitors?
       </h2>
       <p className="text-xl sm:text-2xl">
-        We identified 7 competitors so far (production of customized artificial
-        intelligence applications)
+        We identified the following competitors so far (production of customized
+        AI automations)
       </p>
       <div className="w-[90vw]  h-[100%] flex flex-col gap-2 items-center">
         <iframe
