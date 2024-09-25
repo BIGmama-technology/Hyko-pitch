@@ -28,10 +28,10 @@ export function PitchSlider() {
     ProblemSlide1,
     ProblemSlide,
     SolutionSlide,
-    HykoSlide,
-    ClientsSlide,
     Team,
     Competitors,
+    ClientsSlide,
+    HykoSlide,
     BusinessModel,
     FaqSlide,
   ];
@@ -42,24 +42,25 @@ export function PitchSlider() {
     if (!api) {
       return;
     }
-    document.addEventListener('keydown', (event) => {
+    document.addEventListener("keydown", (event) => {
       const focusedElement = document.activeElement;
 
-      if (focusedElement?.tagName !== 'BUTTON') {
-        if (event.key === 'ArrowLeft') {
+      if (focusedElement?.tagName !== "BUTTON") {
+        if (event.key === "ArrowLeft") {
           return api.scrollPrev();
         }
-        if (event.key === 'ArrowRight') {
+        if (event.key === "ArrowRight") {
           return api.scrollNext();
         }
       }
-    }); setCurrent(api.selectedScrollSnap() + 1);
+    });
+    setCurrent(api.selectedScrollSnap() + 1);
 
     api.on("select", () => {
       setCurrent(api.selectedScrollSnap() + 1);
     });
   }, [api]);
-  console.log("current", current)
+  console.log("current", current);
 
   return (
     <div
@@ -87,8 +88,16 @@ export function PitchSlider() {
           ))}
         </CarouselContent>
         <div className="flex flex-col justify-center p-2 gap-2 items-center mx-4">
-
-          {current >= 8 && current !== 10 ? <a href="mailto:hk@big-mama.io" className="text-center sm:self-end   col-span-1 text-blue-600 text-lg">Contact: Hk@big-mama.io</a> : <div className="h-[1.75rem]" />}
+          {current >= 8 && current !== 10 ? (
+            <a
+              href="mailto:hk@big-mama.io"
+              className="text-center sm:self-end   col-span-1 text-blue-600 text-lg"
+            >
+              Contact: Hk@big-mama.io
+            </a>
+          ) : (
+            <div className="h-[1.75rem]" />
+          )}
           <div className="flex col-span-2  justify-end items-center gap-2">
             <CarouselPrevious />
             <div className="flex justify-center  items-center">
@@ -97,7 +106,6 @@ export function PitchSlider() {
                   key={item.toString()}
                   className={`inline-block px-2 py-1 rounded-full text-white mx-1 hover:cursor-pointer ${index + 1 === current ? "bg-blue-600" : "bg-blue-300"}`}
                   onClick={() => api?.scrollTo(index)}
-
                 >
                   {index + 1}
                 </span>
@@ -105,9 +113,7 @@ export function PitchSlider() {
             </div>
             <CarouselNext />
           </div>
-
         </div>
-
       </Carousel>
     </div>
   );
