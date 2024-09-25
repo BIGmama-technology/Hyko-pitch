@@ -1,4 +1,3 @@
-
 export function Competitors() {
   return (
     <div className="w-full  h-full flex flex-col justify-center text-center items-center  text-blue-600 px-4 ">
@@ -12,9 +11,16 @@ export function Competitors() {
       <div className="w-[90vw]  h-[100%] flex flex-col gap-2 items-center">
         <iframe
           src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQgyGi73xSsMpZf9ZbUjLH1p4sLGYVwVtNQLp_F8RU-VxFJJhQ1k_puqSK4bTEGDw7dHlMvOTprvw6B/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false"
-          className="h-[80%] sm:h-[70%] md:h-[60%]  md:w-[50%] overflow-hidden">
-        </iframe>
-
+          className="h-[80%] sm:h-[70%] md:h-[60%]  md:w-[50%] overflow-hidden"
+          title="table of competetion"
+        />
+        <p className="pt-4 text-xl sm:text-2xl">
+          We outperform our competitors in terms of the complexity we can handle
+          :
+        </p>
+        <ul className="list-none pl-6 text-xl sm:text-2xl">
+          <li>More complex usecases accessible to less technical profiles</li>
+        </ul>
       </div>
     </div>
   );
