@@ -13,8 +13,8 @@ export default function OpeningSlide() {
 			</p>
 
 			<p className="text-2xl sm:text-4xl  mt-2 sm:mt-10 font-semibold sm:text-center">
-				The problem we sloved is allowing non-technical users to build AI agents
-				by themselves with Hyko.ai !
+				The problem we slove with Hyko.ai is allowing non-technical users to
+				build AI agents by themselves !
 			</p>
 		</div>
 	);
