@@ -1,61 +1,69 @@
 import Image from "next/image";
-import { boardMembers, teamContent } from "./constants";
+import BubbleUI from "react-bubble-ui";
+import "react-bubble-ui/dist/index.css";
+import { teamContent } from "./constants";
 
 export function Team() {
-  return <div className='w-full flex flex-col jutems-center items-center max-h-[75vh] sm:max-h-[80vh]   text-blue-600 px-4'>
-    <h2 className="text-2xl sm:text-3xl font-bold mb-8 text-center">Who are we ?</h2>
-    <div className="overflow-y-auto">
+  const options = {
+    size: 250,
+    minSize: 20,
+    gutter: 13,
+    provideProps: true,
+    numCols: 5,
+    fringeWidth: 400,
+    yRadius: 200,
+    xRadius: 250,
+    cornerRadius: 0,
+    showGuides: false,
+    compact: true,
+    gravitation: 10,
+  };
 
-      <p className="text-xl sm:text-2xl my-2">
-        Team members
-      </p>
-      <div className="grid  grid-cols-1 justify-center  gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
+  const children = teamContent.map((data, i) => {
+    return <Child member={data} key={i} />;
+  });
 
-        {teamContent.map(member => (
-          <div
-            className='group relative h-[180px] w-[200px] rounded-md border transition-all hover:grayscale-0 lg:grayscale'
-            key={member.fullname.toLowerCase().replace(' ', '-')}
-          >
-            <div className='absolute  z-10 h-full w-full bg-gradient-to-b from-transparent to-black group-hover:block lg:hidden' />
-            <Image
-              alt={member.fullname}
-              className='rounded-md'
-              src={member.image}
-              fill
-            />
-            <div className='absolute left-0 top-0 z-20 flex h-full w-full items-end justify-between gap-1 p-4 text-base transition-all duration-200 group-hover:opacity-100 lg:opacity-0'>
-              <div className='flex flex-col justify-start text-white'>
-                <h2 className='font-medium'>{member.fullname}</h2>
-                <h3 className="text-sm">{member.role}</h3>
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
-      <p className="text-xl sm:text-2xl my-2">
-        Board members
-      </p>
-      <div className="grid  grid-cols-1 justify-center  gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
-        {boardMembers.map(member => (
-          <div
-            className='group relative h-[180px] w-[200px] rounded-md border transition-all hover:grayscale-0 lg:grayscale'
-            key={member.fullname.toLowerCase().replace(' ', '-')}
-          >
-            <div className='absolute  z-10 h-full w-full bg-gradient-to-b from-transparent to-black group-hover:block lg:hidden' />
-            <Image
-              alt={member.fullname}
-              className='rounded-md'
-              src={member.image}
-              fill
-            />
-            <div className='absolute left-0 top-0 z-20 flex h-full w-full items-end justify-between gap-1 p-4 text-base transition-all duration-200 group-hover:opacity-100 lg:opacity-0'>
-              <div className='flex flex-col justify-start text-white'>
-                <h2 className='font-medium'>{member.fullname}</h2>
-                <h3 className="text-sm">{member.role}</h3>
-              </div>
-            </div>
-          </div>))}
+  return (
+    <BubbleUI
+      options={options}
+      className="w-full max-w-[1280px] h-[800px] rounded-full"
+    >
+      {children}
+    </BubbleUI>
+  );
+}
+
+const Child = ({ member }: { member: any }) => {
+  if (member.image === undefined) {
+    return (
+      <div
+        className="w-full bg-blue-500 group  relative overflow-hidden rounded-[50%] h-full shadow-2xl"
+        key={member.fullname.toLowerCase().replace(" ", "-")}
+      />
+    );
+  }
+  return (
+    <div
+      className="w-full bg-blue-500 group  relative overflow-hidden rounded-[50%] h-full shadow-2xl"
+      key={member.fullname.toLowerCase().replace(" ", "-")}
+    >
+      <Image
+        alt={member.fullname}
+        className="transition-transform duration-200 w-full h-full"
+        src={member.image}
+        fill
+        style={{ objectFit: "cover" }}
+      />
+      <div className="absolute inset-0 z-10 bg-gradient-to-b from-black/30 to-black opacity-60 transition-opacity duration-200 group-hover:opacity-100" />
+
+      <div className="absolute left-0 top-0 z-20 flex h-full w-full items-center justify-center gap-4 p-4 text-white transition-opacity duration-200 group-hover:opacity-100 opacity-0">
+        <div className="flex flex-col justify-center items-center gap-y-2">
+          <h2 className="text-lg  text-center font-semibold">
+            {member.fullname}
+          </h2>
+          <h3 className="text-sm text-center">{member.role}</h3>
+        </div>
       </div>
     </div>
-  </div>
-} 
+  );
+};

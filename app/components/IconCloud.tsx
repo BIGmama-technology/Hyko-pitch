@@ -1,10 +1,10 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
 import { useTheme } from "next-themes";
+import { useEffect, useMemo, useState } from "react";
 import { Cloud, fetchSimpleIcons, renderSimpleIcon } from "react-icon-cloud";
 
-import type { SimpleIcon, ICloud } from "react-icon-cloud";
+import type { ICloud, SimpleIcon } from "react-icon-cloud";
 
 export const cloudProps: Omit<ICloud, "children"> = {
   containerProps: {
@@ -18,7 +18,7 @@ export const cloudProps: Omit<ICloud, "children"> = {
   },
   canvasProps: {
     style: {
-      height: "20vh",
+      height: "50vh",
     },
   },
   options: {
@@ -76,7 +76,7 @@ export default function IconCloud({ iconSlugs }: DynamicCloudProps) {
     if (!data) return null;
 
     return Object.values(data.simpleIcons).map((icon) =>
-      renderCustomIcon(icon, theme || "light"),
+      renderCustomIcon(icon, theme || "light")
     );
   }, [data, theme]);
 

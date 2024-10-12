@@ -9,32 +9,67 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 
+import { Card } from "@/components/ui/card";
 import * as React from "react";
 import { BusinessModel } from "./business-model-slide";
-import { ClientsSlide } from "./clients-slide";
 import { Competitors } from "./competitors-slide";
-import { FaqSlide } from "./faq-slide";
-import { HykoSlide } from "./hyko-slide";
-import HykoLogo from "./Hykologo";
-import { ProblemSlide } from "./problem-slide";
-import OpeningSlide from "./slide-1";
-import { SolutionSlide } from "./solution-slide";
+import { FAQ } from "./faq";
+import { Features } from "./features";
+import { HappyClients } from "./happy-clients";
+import { Opening } from "./opening";
 import { Team } from "./team-slide";
-import { ProblemSlide1 } from "./problem-slide-1";
+import { Problem } from "./the-problem";
+import { Solution } from "./the-solution";
+import { WhatDoWeThink } from "./what-do-we-think";
+import WhoAreWe from "./who-are-we";
+const slides = [
+  {
+    title: "Hi, It's Hyko!",
+    content: Opening,
+  },
+  {
+    title: "Who are we?",
+    content: WhoAreWe,
+  },
+  {
+    title: "What do we think?",
+    content: WhatDoWeThink,
+  },
+  {
+    title: "What problem we are solving?",
+    content: Problem,
+  },
+  {
+    title: "Solution? It's Hyko!!!",
+    content: Solution,
+  },
+  {
+    title: "Our lovely team",
+    content: Team,
+  },
+  {
+    title: "Why we are ahead of the rest?",
+    content: Competitors,
+  },
+  {
+    title: "Our latest features",
+    content: Features,
+  },
+  {
+    title: "Our happy clients",
+    content: HappyClients,
+  },
+  {
+    title: "Our business model",
+    content: BusinessModel,
+  },
+  {
+    title: "FAQ",
+    content: FAQ,
+  },
+];
 
 export function PitchSlider() {
-  const Slides = [
-    OpeningSlide,
-    ProblemSlide1,
-    ProblemSlide,
-    SolutionSlide,
-    Team,
-    Competitors,
-    ClientsSlide,
-    HykoSlide,
-    BusinessModel,
-    FaqSlide,
-  ];
   const [api, setApi] = React.useState<CarouselApi>();
   const [current, setCurrent] = React.useState(0);
 
@@ -42,9 +77,9 @@ export function PitchSlider() {
     if (!api) {
       return;
     }
+
     document.addEventListener("keydown", (event) => {
       const focusedElement = document.activeElement;
-
       if (focusedElement?.tagName !== "BUTTON") {
         if (event.key === "ArrowLeft") {
           return api.scrollPrev();
@@ -54,67 +89,52 @@ export function PitchSlider() {
         }
       }
     });
+
     setCurrent(api.selectedScrollSnap() + 1);
 
     api.on("select", () => {
       setCurrent(api.selectedScrollSnap() + 1);
     });
   }, [api]);
-  console.log("current", current);
 
   return (
-    <div
-      style={{
-        backgroundImage: `
-      linear-gradient(to right, #E6F3FF 2px, transparent 1px),
-      linear-gradient(to bottom, #E6F3FF 2px, transparent 1px)
-    `,
-        backgroundSize: "15px 15px",
-      }}
-      className="h-screen overflow-hidden flex flex-col"
+    <Carousel
+      orientation="horizontal"
+      className="w-full h-screen overflow-hidden flex justify-center items-center border"
+      setApi={setApi}
     >
-      <HykoLogo />
+      <CarouselContent>
+        {slides.map((slide) => (
+          <CarouselItem key={slide.title}>
+            <main className="flex flex-col pt-4 justify-center  items-center w-full h-screen max-w-7xl mx-auto overflow-y-scroll scrollbar-hide">
+              <header className="w-full py-4 flex justify-center items-center sticky ">
+                <h1 className="text-3xl font-bold">{slide.title}</h1>
+              </header>
+              <section className="w-full h-full ">
+                <slide.content />
+              </section>
+            </main>
+          </CarouselItem>
+        ))}
+      </CarouselContent>
 
-      <Carousel
-        orientation="horizontal"
-        className="w-full  overflow-hidden  "
-        setApi={setApi}
-      >
-        <CarouselContent>
-          {Slides.map((Item, index) => (
-            <CarouselItem key={index}>
-              <Item />
-            </CarouselItem>
-          ))}
-        </CarouselContent>
-        <div className="flex flex-col justify-center p-2 gap-2 items-center mx-4">
-          {current >= 8 && current !== 10 ? (
-            <a
-              href="mailto:hk@big-mama.io"
-              className="text-center sm:self-end   col-span-1 text-blue-600 text-lg"
-            >
-              Contact: Hk@big-mama.io
-            </a>
-          ) : (
-            <div className="h-[1.75rem]" />
-          )}
-          <div className="flex col-span-2  justify-end items-center gap-2">
-            <CarouselPrevious />
-            <div className="flex justify-center  items-center">
-              {Slides.map((item, index) => (
-                <span
-                  key={item.toString()}
-                  className={`inline-block px-2 py-1 rounded-full text-white mx-1 hover:cursor-pointer ${index + 1 === current ? "bg-blue-600" : "bg-blue-300"}`}
-                  onClick={() => api?.scrollTo(index)}
-                >
-                  {index + 1}
-                </span>
-              ))}
-            </div>
-            <CarouselNext />
+      <Card className="absolute  bottom-3 left-[50%] w-fit flex justify-center items-center translate-x-[-50%] py-1 px-2">
+        <div className="flex justify-center items-center gap-x-2">
+          <CarouselPrevious />
+          <div className="flex justify-center  items-center">
+            {slides.map((slide, index) => (
+              <span
+                key={slide.title}
+                className={`rounded-full mx-1 w-2 duration-300 h-2 hover:cursor-pointer ${
+                  index + 1 === current ? "bg-primary" : "bg-border"
+                }`}
+                onClick={() => api?.scrollTo(index)}
+              />
+            ))}
           </div>
+          <CarouselNext />
         </div>
-      </Carousel>
-    </div>
+      </Card>
+    </Carousel>
   );
 }

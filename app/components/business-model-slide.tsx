@@ -1,51 +1,109 @@
-import { Separator } from "@/components/ui/separator"
-import { ExternalLink } from "lucide-react"
+import { Card } from "@/components/ui/card";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
 
 export function BusinessModel() {
-  return <div className="flex w-full h-full flex-col items-center  overflow-y-scroll  text-blue-600 justify-center px-4 max-h-[75vh] sm:max-h-[80vh]">
-    <h2 className="text-2xl sm:text-3xl font-bold  text-center">
-      Our Business Model(Our worst case scenario):
-    </h2>
-    <div className="mt-6">
-      <h2 className="text-xl sm:text-3xl font-bold   text-center">
-        SaaS with two kinds of licenses
-      </h2>
-    </div>
+  const data = [
+    { year: 2025, arr: 3049200.0, valuation: 60984000.0, exitValue: 6098400.0 },
+    {
+      year: 2026,
+      arr: 9338400.0,
+      valuation: 186768000.0,
+      exitValue: 18676800.0,
+    },
+    {
+      year: 2027,
+      arr: 17787600.0,
+      valuation: 355752000.0,
+      exitValue: 35575200.0,
+    },
+    {
+      year: 2028,
+      arr: 28728000.0,
+      valuation: 574560000.0,
+      exitValue: 57456000.0,
+    },
+  ];
 
-    <div className="grid grid-cols-2 w-full my-2  sm:mb-6   justify-between">
-      <div>
-        <div className="flex justify-center my-2">
-          <img src='/down-left-arrow.svg' width={32} height={32} alt='down left arrow' />
+  return (
+    <div className=" flex justify-center items-center h-full">
+      <div className="w-fit  flex col justify-center items-stretch gap-y-4">
+        <div className="flex flex-col justify-between gap-y-6 px-[5%] text-center items-center w-[50%]">
+          <p className="text-5xl leading-snug">
+            <span className="font-bold text-blue-600">SaaS</span> with two kinds
+            of licenses
+          </p>
+          <div className="flex justify-center items-center gap-x-4">
+            <Card className="p-4 flex flex-col justify-center items-center gap-y-6 w-[50%]">
+              <p className="text-3xl font-semibold">
+                Do it you're self License
+              </p>
+              <h3 className="text-blue-600 text-5xl font-bold">€49 </h3>
+              <span className="text-2xl font-bold text-black">Per Month</span>
+            </Card>
+            <Card className="p-4 flex flex-col justify-center items-center gap-y-6 w-[50%]">
+              <p className="text-3xl font-semibold">Custom License</p>
+              <h3 className="text-blue-600 text-5xl font-bold">€1,000 </h3>
+              <span className="text-2xl font-bold text-black">Per Month</span>
+            </Card>
+          </div>
         </div>
-        <h2 className="text-xl sm:text-3xl font-bold   text-center">
-          Do it yourself license:       </h2>
-        <p className="text-xl sm:text-2xl text-center  textblue-500 "> €49 per month</p>
-      </div>
-      <div >
-        <div className="flex justify-center my-2">
-          <img src='/down-right-arrow.svg' width={32} height={32} alt='down right arrow' />
+        <div className="w-[50%] gap-y-6 flex flex-col justify-center items-center px-4">
+          <h2 className="text-5xl text-center mx-4 leading-snug">
+            <span className="font-bold text-blue-600">ARR</span> Hyko : Mini ARR{" "}
+            <span className="font-bold text-blue-600">2025 - 2028</span>
+          </h2>
+          <div className="border rounded-lg overflow-hidden">
+            <Table>
+              <TableHeader>
+                <TableRow>
+                  <TableHead className="text-center font-bold">Year</TableHead>
+                  <TableHead className="text-center font-bold">ARR</TableHead>
+                  <TableHead className="text-center font-bold">
+                    Valuation (*20 ARR)
+                  </TableHead>
+                  <TableHead className="text-center font-bold">
+                    Exit Value (Invest 10%)
+                  </TableHead>
+                </TableRow>
+              </TableHeader>
+              <TableBody>
+                {data.map((row) => (
+                  <TableRow key={row.year}>
+                    <TableCell className="text-center font-medium">
+                      ARR {row.year}
+                    </TableCell>
+                    <TableCell className="text-center">
+                      {row.arr.toLocaleString("en-US", {
+                        style: "currency",
+                        currency: "EUR",
+                      })}
+                    </TableCell>
+                    <TableCell className="text-center">
+                      {row.valuation.toLocaleString("en-US", {
+                        style: "currency",
+                        currency: "EUR",
+                      })}
+                    </TableCell>
+                    <TableCell className="text-center">
+                      {row.exitValue.toLocaleString("en-US", {
+                        style: "currency",
+                        currency: "EUR",
+                      })}
+                    </TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          </div>
         </div>
-        <h2 className="text-xl sm:text-3xl font-bold  mx-auto  text-center">
-          Custom license:
-        </h2>
-        <p className="text-xl sm:text-2xl text-center mx-auto textblue-500 max-w-md">  €1,000 per month</p>
       </div>
     </div>
-
-    <Separator className='h-[4px] bg-[#B0C4DE] w-full my-4' />
-    <a
-      target="_blank"
-      href='https://docs.google.com/spreadsheets/d/1edTf-pW4zc2g7-5oyrUIL1NiFsRkD5R0OemxzRUdtGQ/edit?usp=sharing' className="flex gap-2 items-center justify-center  text-xl sm:text-3xl font-bold   text-center mb-4 ">
-      <span>
-        Our figures,
-        more details here
-      </span>
-      <ExternalLink className="size-8" />
-    </a>
-    <div className="flex flex-col items-center w-[90vw] h-72 sm:h-96 gap-2 overflow-y-auto">
-      <iframe className="min-h-72 max-w-fit  px-4 w-[90%]"
-        src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT_4gbWduXx0DtCVEcNXFy420fFs6KDuk3nonM_fb0EuEJNjhXKQK9Rbbl4PX6Fg6IjIVs_7hAQFGlm/pubhtml?gid=1493678232&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
-
-    </div>
-  </div>
+  );
 }

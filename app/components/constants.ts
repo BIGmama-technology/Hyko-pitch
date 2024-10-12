@@ -5,27 +5,40 @@ export interface MemberProps {
   image: string;
 }
 
-export const teamContent: MemberProps[] = [
+export const teamContent = [
+  { fullname: "1" },
+  {
+    fullname: "Darine Tag",
+    role: "Product Designer ",
+    image: "/team/darine.JPG",
+  },
+  { fullname: "1" },
+  {
+    fullname: "Mahdi KALLEL",
+    role: "Scientific Advisor",
+    image: "/team/mahdi.png",
+  },
+
+  { fullname: "1" },
+
+  {
+    fullname: "Samir Cheraft",
+    role: "Office Manager",
+    image: "/team/samir.png",
+  },
+
   {
     fullname: "Hadj Khelil",
     role: "CEO and founder of BIGmama",
     image: "/team/hadj.png",
   },
   {
-    fullname: "Hachem Betrouni",
-    role: "CTO",
-    image: "/team/hachem.png",
-  },
-  {
     fullname: "Ouassim Abdelmalek GHRIBI",
     role: "Lead Software Engineer",
     image: "/team/ouassim.png",
   },
-  {
-    fullname: "Samir Cheraft",
-    role: "Office Manager",
-    image: "/team/samir.png",
-  },
+
+  { fullname: "1" },
   {
     fullname: "Anfal Yousra BOUCETTA",
     role: "Software Engineer",
@@ -36,30 +49,18 @@ export const teamContent: MemberProps[] = [
     role: "Backend Developer",
     image: "/team/louai.png",
   },
-  {
-    fullname: "Abdelkarim menna",
-    role: "Frontend Developer",
-    image: "/team/karim.png",
-  },
-  {
-    fullname: "Darine Tag",
-    role: "Product Designer ",
-    image: "/team/darine.JPG",
-  },
 
   {
-    fullname: "Mahdi KALLEL",
-    role: "Scientific Advisor",
-    image: "/team/mahdi.png",
+    fullname: "Hachem Betrouni",
+    role: "CTO",
+    image: "/team/hachem.png",
   },
-];
-
-export const boardMembers: MemberProps[] = [
   {
     fullname: "Abderrahmane Hadj-Nacer",
     role: "Strategic Advisor",
     image: "/team/3ami-nacer.png",
   },
+  { fullname: "1" },
   {
     fullname: "Jacques VINCENT",
     role: "Share holder",
@@ -74,8 +75,9 @@ export const boardMembers: MemberProps[] = [
     fullname: "Edgar MORIN",
     role: "Share holder",
     image: "/team/edgar-morin.png",
-  }
-]
+  },
+  { fullname: "1" },
+];
 
 export interface FaqProps {
   title: string;
