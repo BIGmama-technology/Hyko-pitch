@@ -79,23 +79,27 @@ const Benefit = ({ name, description, icon, color }: Item) => {
 
 export function WhatDoWeThink() {
   return (
-    <div className=" flex justify-center items-center h-full">
-      <div className="flex flex-col justify-between gap-y-6 px-[5%] text-center items-center w-2/3">
-        <p className="text-5xl leading-snug">
+    <div className="flex flex-col lg:flex-row gap-y-4 justify-center items-center h-full">
+      <div className="flex flex-col justify-between gap-y-6 lg:px-[5%] text-center items-center w-2/3">
+        <h1 className="text-2xl lg:text-4xl leading-relaxed">
           {" "}
           <span className="font-bold text-red-600">Agents</span> are the future
           of AI, <span className="font-bold text-blue-600">Why?</span>
           {"\n"}
-          Because agents offer a solution to the biggest AI issues, Agents make
-          AI:
-        </p>
+          Because agents offer a solution to the biggest AI issues!
+        </h1>
       </div>
-      <div className="flex justify-center items-center p-2 h-[420px] overflow-hidden w-1/3">
-        <AnimatedList delay={2000} className="w-full">
-          {benefits.map((item, idx) => (
-            <Benefit {...item} key={idx} />
-          ))}
-        </AnimatedList>
+      <div className="flex flex-col justify-center items-center h-[500px] gap-y-4 w-full lg:w-[40%]">
+        <h2 className="text-xl lg:text-4xl leading-snug">
+          <span className="font-bold text-red-600">Agents</span> makes AI
+        </h2>
+        <div className="overflow-hidden w-full">
+          <AnimatedList delay={2000} className="w-full overflow-hidden p-2">
+            {benefits.map((item, idx) => (
+              <Benefit {...item} key={idx} />
+            ))}
+          </AnimatedList>
+        </div>
       </div>
     </div>
   );

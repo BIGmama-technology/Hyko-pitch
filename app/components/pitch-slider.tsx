@@ -106,11 +106,13 @@ export function PitchSlider() {
       <CarouselContent>
         {slides.map((slide) => (
           <CarouselItem key={slide.title}>
-            <main className="flex flex-col pt-4 justify-center  items-center w-full h-screen max-w-7xl mx-auto overflow-y-scroll scrollbar-hide">
+            <main className="flex flex-col p-2 lg:p-4 justify-center  items-center w-full h-screen max-w-7xl mx-auto overflow-y-scroll scrollbar-hide">
               <header className="w-full py-4 flex justify-center items-center sticky ">
-                <h1 className="text-3xl font-bold">{slide.title}</h1>
+                <h1 className="text-2xl lg:text-4xl text-center font-bold">
+                  {slide.title}
+                </h1>
               </header>
-              <section className="w-full h-full ">
+              <section className="w-full h-full">
                 <slide.content />
               </section>
             </main>

@@ -8,6 +8,15 @@ export function Opening() {
         alt="good image"
         width={1280}
         height={600}
+        className="hidden lg:block"
+        style={{ objectFit: "contain" }}
+      />
+      <Image
+        src="/intro-mobile.png"
+        alt="good image"
+        width={560}
+        height={300}
+        className="lg:hidden"
         style={{ objectFit: "contain" }}
       />
     </div>

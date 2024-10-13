@@ -1,7 +1,8 @@
+import { BorderBeam } from "@/components/ui/border-beam";
 import Image from "next/image";
 import BubbleUI from "react-bubble-ui";
 import "react-bubble-ui/dist/index.css";
-import { teamContent } from "./constants";
+import { teamContent, teamContentMobile } from "./constants";
 
 export function Team() {
   const options = {
@@ -19,17 +20,44 @@ export function Team() {
     gravitation: 10,
   };
 
+  const mobileOptions = {
+    size: 150,
+    minSize: 10,
+    gutter: 13,
+    provideProps: true,
+    numCols: 3,
+    fringeWidth: 400,
+    yRadius: 250,
+    xRadius: 150,
+    cornerRadius: 0,
+    showGuides: false,
+    compact: true,
+    gravitation: 10,
+  };
+
+  const childrenMobile = teamContentMobile.map((data, i) => {
+    return <Child member={data} key={i} />;
+  });
+
   const children = teamContent.map((data, i) => {
     return <Child member={data} key={i} />;
   });
 
   return (
-    <BubbleUI
-      options={options}
-      className="w-full max-w-[1280px] h-[800px] rounded-full"
-    >
-      {children}
-    </BubbleUI>
+    <div className="flex w-full h-full flex-col items-center justify-center ">
+      <BubbleUI
+        options={mobileOptions}
+        className="w-full my-auto max-w-[680px] lg:w-0 lg:absolute h-full lg:h-[750px] rounded-full"
+      >
+        {childrenMobile}
+      </BubbleUI>
+      <BubbleUI
+        options={options}
+        className="w-0 absolute lg:w-full lg:flex my-auto lg:max-w-[1280px] h-full lg:h-[750px] rounded-full"
+      >
+        {children}
+      </BubbleUI>
+    </div>
   );
 }
 
@@ -37,14 +65,14 @@ const Child = ({ member }: { member: any }) => {
   if (member.image === undefined) {
     return (
       <div
-        className="w-full bg-blue-500 group  relative overflow-hidden rounded-[50%] h-full shadow-2xl"
+        className="w-full  bg-blue-400 group  relative overflow-hidden rounded-full h-full shadow-2xl"
         key={member.fullname.toLowerCase().replace(" ", "-")}
-      />
+      ></div>
     );
   }
   return (
     <div
-      className="w-full bg-blue-500 group  relative overflow-hidden rounded-[50%] h-full shadow-2xl"
+      className="w-full p-1 bg-blue-500 group  relative overflow-hidden rounded-full h-full shadow-2xl"
       key={member.fullname.toLowerCase().replace(" ", "-")}
     >
       <Image
@@ -64,6 +92,15 @@ const Child = ({ member }: { member: any }) => {
           <h3 className="text-sm text-center">{member.role}</h3>
         </div>
       </div>
+
+      {member.coreTeam ? (
+        <BorderBeam
+          className="z-99999"
+          size={250}
+          duration={12}
+          delay={Math.round(Math.random() * 10)}
+        />
+      ) : null}
     </div>
   );
 };

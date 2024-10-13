@@ -18,7 +18,7 @@ export const cloudProps: Omit<ICloud, "children"> = {
   },
   canvasProps: {
     style: {
-      height: "50vh",
+      height: "25vh",
     },
   },
   options: {

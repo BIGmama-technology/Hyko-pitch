@@ -39,21 +39,21 @@ const prevClients = [
 
 export default function WhoAreWe() {
   return (
-    <article className="flex w-full  h-full justify-center items-center">
+    <article className="flex flex-col lg:flex-row w-full gap-y-4 h-full justify-center items-center">
       <div className="w-full flex flex-col justify-center items-center text-center gap-y-10 px-[5%]">
-        <h2 className="text-5xl">
+        <h2 className="text-2xl lg:text-4xl">
           We have been crafting custom{" "}
           <span className="font-bold text-blue-600">AI agents</span> for over a{" "}
           <span className="font-bold text-blue-600">decade</span>
         </h2>
-        <p className="text-2xl">
+        <p className="text-normal lg:text-2xl">
           We've made it possible for non-technical users to effortlessly build
           their own AI agents using Hyko.ai!
         </p>
       </div>
       <div className="w-full grid grid-cols-3 gap-4 ">
         {prevClients.map((client) => (
-          <Card className="p-4 flex flex-col justify-center items-center gap-2">
+          <Card className="p-2 lg:p-4 flex flex-col justify-center items-center gap-2">
             <Image
               src={client.logo}
               alt={client.name}
@@ -61,7 +61,9 @@ export default function WhoAreWe() {
               height={120}
             />
             {client.name !== "Yourscrib" ? (
-              <h3 className="font-semibold text-xl">{client.name}</h3>
+              <h3 className="font-semibold text-normal lg:text-xl">
+                {client.name}
+              </h3>
             ) : null}
           </Card>
         ))}

@@ -1,13 +1,95 @@
 export interface MemberProps {
-  tagline?: string;
+  coreTeam?: boolean;
   role: string;
   fullname: string;
   image: string;
 }
 
+export const teamContentMobile = [
+  { fullname: "1" },
+  {
+    fullname: "Abderrahmane Hadj-Nacer",
+    role: "Strategic Advisor",
+    image: "/team/3ami-nacer.png",
+  },
+  { fullname: "1" },
+  {
+    fullname: "Mahdi KALLEL",
+    role: "Scientific Advisor",
+    image: "/team/mahdi.png",
+  },
+
+  { fullname: "1" },
+
+  {
+    coreTeam: true,
+    fullname: "Samir Cheraft",
+    role: "Office Manager",
+    image: "/team/samir.png",
+  },
+
+  {
+    coreTeam: true,
+    fullname: "Anfal Yousra BOUCETTA",
+    role: "Software Engineer",
+    image: "/team/yousra.png",
+  },
+  {
+    coreTeam: true,
+    fullname: "Ouassim Abdelmalek GHRIBI",
+    role: "Lead Software Engineer",
+    image: "/team/ouassim.png",
+  },
+
+  {
+    coreTeam: true,
+    fullname: "Hadj Khelil",
+    role: "CEO and founder of BIGmama",
+    image: "/team/hadj.png",
+  },
+  {
+    coreTeam: true,
+    fullname: "Louai Boumediene",
+    role: "Backend Developer",
+    image: "/team/louai.png",
+  },
+
+  {
+    coreTeam: true,
+    fullname: "Hachem Betrouni",
+    role: "CTO",
+    image: "/team/hachem.png",
+  },
+  {
+    coreTeam: true,
+    fullname: "Darine Tag",
+    role: "Product Designer ",
+    image: "/team/darine.JPG",
+  },
+
+  { fullname: "1" },
+  {
+    fullname: "Jacques VINCENT",
+    role: "Share holder",
+    image: "/team/jaques-vincent.png",
+  },
+  {
+    fullname: "J-P HERTEMAN",
+    role: "Share holder",
+    image: "/team/j-p-herteman.png",
+  },
+  {
+    fullname: "Edgar MORIN",
+    role: "Share holder",
+    image: "/team/edgar-morin.png",
+  },
+  { fullname: "1" },
+];
+
 export const teamContent = [
   { fullname: "1" },
   {
+    coreTeam: true,
     fullname: "Darine Tag",
     role: "Product Designer ",
     image: "/team/darine.JPG",
@@ -22,17 +104,20 @@ export const teamContent = [
   { fullname: "1" },
 
   {
+    coreTeam: true,
     fullname: "Samir Cheraft",
     role: "Office Manager",
     image: "/team/samir.png",
   },
 
   {
+    coreTeam: true,
     fullname: "Hadj Khelil",
     role: "CEO and founder of BIGmama",
     image: "/team/hadj.png",
   },
   {
+    coreTeam: true,
     fullname: "Ouassim Abdelmalek GHRIBI",
     role: "Lead Software Engineer",
     image: "/team/ouassim.png",
@@ -40,17 +125,20 @@ export const teamContent = [
 
   { fullname: "1" },
   {
+    coreTeam: true,
     fullname: "Anfal Yousra BOUCETTA",
     role: "Software Engineer",
     image: "/team/yousra.png",
   },
   {
+    coreTeam: true,
     fullname: "Louai Boumediene",
     role: "Backend Developer",
     image: "/team/louai.png",
   },
 
   {
+    coreTeam: true,
     fullname: "Hachem Betrouni",
     role: "CTO",
     image: "/team/hachem.png",

@@ -8,7 +8,7 @@ import { faqContent } from "./constants";
 
 export function FAQ() {
   return (
-    <section className="flex justify-center items-center h-full w-full max-w-[70%] mx-auto">
+    <section className="flex justify-center items-center h-full w-full max-w-4xl mx-auto">
       <Accordion
         type="multiple"
         className="border rounded-md text-center w-full"

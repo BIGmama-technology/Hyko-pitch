@@ -110,9 +110,9 @@ export function Competitors() {
 
   return (
     <div className=" flex justify-center items-center h-full">
-      <div className="w-fit  flex col justify-center items-center gap-y-4">
-        <div className="flex flex-col justify-between gap-y-6 px-[5%] text-center items-center w-[40%]">
-          <p className="text-5xl">
+      <div className="flex flex-col lg:flex-row text-xl items-center gap-y-4">
+        <div className="flex flex-col justify-between gap-y-6 lg:px-[5%] text-center items-center lg:w-[40%]">
+          <p className="text-xl lg:text-4xl">
             {" "}
             <span className="font-bold text-red-600">Complex</span> AI
             Automatons,{" "}
@@ -125,7 +125,7 @@ export function Competitors() {
           </p>
         </div>
 
-        <div className="border rounded-lg w-[60%]">
+        <div className="border rounded-lg lg:w-[60%]">
           <Table>
             <TableHeader>
               <TableRow>

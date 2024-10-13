@@ -8,11 +8,11 @@ export function HappyClients() {
   ];
   return (
     <div className="flex w-full flex-col h-full justify-center items-center">
-      <div className="grid grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
         {videoIds.map((id) => (
           <iframe
             key={id}
-            className="border rounded-md w-[240px] h-[135px] sm:w-[320px] sm:h-[180px] md:w-[400px] md:h-[225px]"
+            className="border rounded-md w-[320px] h-[180px] lg:w-[400px] lg:h-[225px]"
             src={`https://www.youtube.com/embed/${id}`}
             title="client youtube video"
             allowFullScreen

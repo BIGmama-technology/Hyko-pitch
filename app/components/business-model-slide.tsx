@@ -32,30 +32,40 @@ export function BusinessModel() {
   ];
 
   return (
-    <div className=" flex justify-center items-center h-full">
-      <div className="w-fit  flex col justify-center items-stretch gap-y-4">
-        <div className="flex flex-col justify-between gap-y-6 px-[5%] text-center items-center w-[50%]">
-          <p className="text-5xl leading-snug">
+    <div className=" w-full flex justify-center items-center h-full">
+      <div className="w-full flex flex-col lg:flex-row justify-center items-stretch gap-y-8">
+        <div className="flex flex-col justify-between gap-y-6 px-[5%] text-center items-center w-full lg:w-[50%]">
+          <p className="text-2xl lg:text-4xl leading-snug">
             <span className="font-bold text-blue-600">SaaS</span> with two kinds
             of licenses
           </p>
-          <div className="flex justify-center items-center gap-x-4">
-            <Card className="p-4 flex flex-col justify-center items-center gap-y-6 w-[50%]">
-              <p className="text-3xl font-semibold">
+          <div className="flex justify-center items-stretch gap-x-4">
+            <Card className="p-4 flex flex-col justify-center items-center gap-y-2 lg:gap-y-6 w-[50%]">
+              <p className="text-xl lg:text-3xl font-semibold">
                 Do it you're self License
               </p>
-              <h3 className="text-blue-600 text-5xl font-bold">€49 </h3>
-              <span className="text-2xl font-bold text-black">Per Month</span>
+              <h3 className="text-blue-600 text-2xl lg:text-5xl font-bold">
+                €49{" "}
+              </h3>
+              <span className="text-xl lg:text-2xl font-bold text-black">
+                Per Month
+              </span>
             </Card>
-            <Card className="p-4 flex flex-col justify-center items-center gap-y-6 w-[50%]">
-              <p className="text-3xl font-semibold">Custom License</p>
-              <h3 className="text-blue-600 text-5xl font-bold">€1,000 </h3>
-              <span className="text-2xl font-bold text-black">Per Month</span>
+            <Card className="p-4 flex flex-col justify-center items-center gap-y-2 lg:gap-y-6 w-[50%]">
+              <p className="text-xl lg:text-3xl font-semibold">
+                Custom License
+              </p>
+              <h3 className="text-blue-600 text-2xl lg:text-5xl font-bold">
+                €1,000{" "}
+              </h3>
+              <span className="text-xl lg:text-2xl font-bold text-black">
+                Per Month
+              </span>
             </Card>
           </div>
         </div>
-        <div className="w-[50%] gap-y-6 flex flex-col justify-center items-center px-4">
-          <h2 className="text-5xl text-center mx-4 leading-snug">
+        <div className="lg:w-[50%] gap-y-6 flex flex-col justify-center items-center px-4">
+          <h2 className="text-2xl lg:text-4xl text-center mx-4 leading-snug">
             <span className="font-bold text-blue-600">ARR</span> Hyko : Mini ARR{" "}
             <span className="font-bold text-blue-600">2025 - 2028</span>
           </h2>
