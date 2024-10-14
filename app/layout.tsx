@@ -1,3 +1,4 @@
+import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
 import { Nunito } from "next/font/google";
 import "./globals.css";
@@ -17,7 +18,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={nunito.className}>{children}</body>
+      <body
+        className={cn(
+          nunito.className,
+          "flex px-4 lg:px-8 h-screen justify-center items-center w-full overflow-y-scroll"
+        )}
+      >
+        {children}
+      </body>
     </html>
   );
 }
