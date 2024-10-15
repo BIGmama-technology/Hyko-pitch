@@ -34,12 +34,7 @@ const SingleSolution = ({ solution }: { solution: any }) => {
   return (
     <li className="relative min-h-fit overflow-hidden rounded-2xl p-4 w-full bg-white border shadow-md">
       <div className="flex flex-row items-center gap-3">
-        <div
-          className="flex size-10 items-center justify-center rounded-2xl"
-          style={{
-            backgroundColor: "#3884ff",
-          }}
-        >
+        <div className="flex size-10 p-2 items-center justify-center rounded-2xl bg-blue-600">
           <span className="text-lg">{solution.icon}</span>
         </div>
         <div className="flex flex-col overflow-hidden">

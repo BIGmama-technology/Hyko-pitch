@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export function Opening() {
   return (
-    <div className="flex w-full justify-center items-center">
+    <>
       <Image
         src="/intro.png"
         alt="good image"
@@ -19,6 +19,6 @@ export function Opening() {
         className="lg:hidden"
         style={{ objectFit: "contain" }}
       />
-    </div>
+    </>
   );
 }

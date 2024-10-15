@@ -1,5 +1,8 @@
 import Marquee from "@/components/ui/marquee";
+
 import { cn } from "@/lib/utils";
+import Image from "next/image";
+import Link from "next/link";
 
 const reviews = [
   {
@@ -52,7 +55,13 @@ const ReviewCard = ({
       )}
     >
       <div className="flex flex-row items-center gap-2">
-        <img className="rounded-full" width="32" height="32" alt="" src={img} />
+        <Image
+          className="rounded-full aspect-square object-cover"
+          width={40}
+          height={40}
+          alt=""
+          src={img}
+        />
         <div className="flex flex-col">
           <figcaption className="text-sm font-medium dark:text-white">
             {name}
@@ -66,7 +75,23 @@ const ReviewCard = ({
 
 export function Testimonials() {
   return (
-    <div className="flex w-full h-full flex-col items-center justify-center  text-center px-4 ">
+    <div className="flex w-full h-screen flex-col items-center justify-center  text-center z-50">
+      <h1 className="text-2xl mb-4 lg:mb-8 lg:text-4xl leading-relaxed">
+        Full Video{" "}
+        <span className="font-bold text-red-600 underline">
+          <Link
+            href="https://www.youtube.com/watch?v=bWK0EfiBN8w"
+            target="_blank"
+          >
+            Here
+          </Link>
+        </span>
+      </h1>
+      <Marquee reverse pauseOnHover className="[--duration:20s]">
+        {secondRow.map((review) => (
+          <ReviewCard key={review.name} {...review} />
+        ))}
+      </Marquee>
       <Marquee pauseOnHover className="[--duration:20s]">
         {firstRow.map((review) => (
           <ReviewCard key={review.name} {...review} />
@@ -77,9 +102,6 @@ export function Testimonials() {
           <ReviewCard key={review.name} {...review} />
         ))}
       </Marquee>
-
-      <div className="pointer-events-none absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-white dark:from-background"></div>
-      <div className="pointer-events-none absolute inset-y-0 right-0 w-1/3 bg-gradient-to-l from-white dark:from-background"></div>
     </div>
   );
 }

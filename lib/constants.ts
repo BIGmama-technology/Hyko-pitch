@@ -1,7 +1,7 @@
+import { Features } from "@/components/slides/features";
 import { BusinessModel } from "../components/slides/business-model";
 import { Competitors } from "../components/slides/competitors";
 import { FAQ } from "../components/slides/faq";
-import { Features } from "../components/slides/features";
 import { HappyClients } from "../components/slides/happy-clients";
 import { Opening } from "../components/slides/opening";
 import { Problem } from "../components/slides/problem";
@@ -32,7 +32,7 @@ export const slides = [
     content: WhatDoWeThink,
   },
   {
-    title: "What problem we are solving?",
+    title: "We learned from over a decade in the ground field that:",
     content: Problem,
   },
   {
@@ -56,7 +56,7 @@ export const slides = [
     content: Testimonials,
   },
   {
-    title: "Our happy clients",
+    title: "Our happy clients/users",
     content: HappyClients,
   },
   {
@@ -71,11 +71,8 @@ export const slides = [
 
 export const teamContentMobile = [
   { fullName: "1" },
-  {
-    fullName: "Abderrahmane Hadj-Nacer",
-    role: "Strategic Advisor",
-    image: "/team/3ami-nacer.png",
-  },
+
+  { fullName: "1" },
   { fullName: "1" },
   {
     fullName: "Mahdi KALLEL",
@@ -98,26 +95,19 @@ export const teamContentMobile = [
     role: "Software Engineer",
     image: "/team/yousra.png",
   },
-  {
-    coreTeam: true,
-    fullName: "Ouassim Abdelmalek GHRIBI",
-    role: "Lead Software Engineer",
-    image: "/team/ouassim.png",
-  },
 
-  {
-    coreTeam: true,
-    fullName: "Hadj Khelil",
-    role: "CEO and founder of BIGmama",
-    image: "/team/hadj.png",
-  },
   {
     coreTeam: true,
     fullName: "Louai Boumediene",
     role: "Backend Developer",
     image: "/team/louai.png",
   },
-
+  {
+    coreTeam: true,
+    fullName: "Hadj Khelil",
+    role: "CEO and founder of BIGmama",
+    image: "/team/hadj.png",
+  },
   {
     coreTeam: true,
     fullName: "Hachem Betrouni",
@@ -130,8 +120,11 @@ export const teamContentMobile = [
     role: "Product Designer ",
     image: "/team/darine.JPG",
   },
-
-  { fullName: "1" },
+  {
+    fullName: "Abderrahmane Hadj-Nacer",
+    role: "Strategic Advisor",
+    image: "/team/3ami-nacer.png",
+  },
   {
     fullName: "Jacques VINCENT",
     role: "Share holder",

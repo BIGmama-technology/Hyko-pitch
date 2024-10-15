@@ -44,26 +44,22 @@ export default function PitchSlider() {
   return (
     <Carousel
       orientation="horizontal"
-      className="w-full h-full overflow-hidden"
+      className="min-h-screen flex justify-center items-center w-full h-screen"
       setApi={setApi}
     >
-      <CarouselContent>
+      <CarouselContent className="max-h-screen">
         {slides.map((slide) => (
           <CarouselItem key={slide.title}>
-            <section className="w-full  h-full max-w-7xl mx-auto overflow-hidden">
-              <header className="w-full py-4 flex flex-col justify-center items-center sticky top-5">
-                <h1 className="text-2xl lg:text-4xl text-center font-bold ">
-                  {slide.title}
-                </h1>
-              </header>
-              <section className="w-full max-h-full flex flex-col bg-yellow-300 justify-center items-stretch">
-                <slide.content />
-              </section>
+            <h1 className="w-full  mb-4  text-2xl lg:text-4xl text-center font-bold px-4 py-2 ">
+              {slide.title}
+            </h1>
+            <section className="max-h-screen h-full max-w-7xl flex flex-col justify-center w-full relative mx-auto  overflow-y-scroll  px-4 py-4 lg:p-6 lg:pt-0">
+              <slide.content />
             </section>
           </CarouselItem>
         ))}
       </CarouselContent>
-      <Card className="absolute  bottom-3 left-[50%] w-fit flex justify-center items-center translate-x-[-50%] py-1 px-2">
+      <Card className="fixed bottom-3 left-[50%] w-fit flex justify-center items-center translate-x-[-50%] py-1 px-2">
         <div className="flex justify-center items-center gap-x-2">
           <CarouselPrevious />
           <div className="flex justify-center  items-center">

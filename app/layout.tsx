@@ -18,14 +18,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={cn(
-          nunito.className,
-          "flex px-4 lg:px-8 h-screen justify-center items-center w-full overflow-y-scroll"
-        )}
-      >
-        {children}
-      </body>
+      <body className={cn(nunito.className)}>{children}</body>
     </html>
   );
 }

@@ -20,6 +20,10 @@ const prevClients = [
     logo: "/clients/total.png",
   },
   {
+    name: "Yourscrib",
+    logo: "/clients/yourscrib.png",
+  },
+  {
     name: "sonatrach",
     logo: "/clients/sonatrach.png",
   },
@@ -27,19 +31,11 @@ const prevClients = [
     name: "Ooredoo",
     logo: "/clients/ooredoo.png",
   },
-  {
-    name: "Ooredoo",
-    logo: "/clients/ooredoo.png",
-  },
-  {
-    name: "Yourscrib",
-    logo: "/clients/yourscrib.png",
-  },
 ];
 
 export default function WhoAreWe() {
   return (
-    <article className="flex flex-col lg:flex-row bg-black gap-y-4 justify-center items-center">
+    <article className="flex w-full h-full flex-col lg:flex-row gap-y-4 justify-center items-center">
       <div className="w-full flex flex-col justify-center items-center text-center gap-y-10 px-[5%]">
         <h2 className="text-2xl lg:text-4xl">
           We have been crafting custom{" "}
@@ -48,10 +44,10 @@ export default function WhoAreWe() {
         </h2>
         <p className="text-normal lg:text-2xl">
           We've made it possible for non-technical users to effortlessly build
-          their own AI agents using Hyko.ai!
+          their own AI agents using our platform Hyko.ai!
         </p>
       </div>
-      <div className="w-full grid grid-cols-3 gap-4">
+      <div className="w-full grid grid-cols-3 gap-4 items-stretch justify-stretch">
         {prevClients.map((client) => (
           <Card className="p-2 lg:p-4 flex flex-col justify-center items-center gap-2 shadow-md">
             <Image

@@ -2,6 +2,7 @@
 
 import { AnimatedList } from "@/components/ui/animated-list";
 import { cn } from "@/lib/utils";
+import Link from "next/link";
 
 interface Item {
   name: string;
@@ -86,7 +87,16 @@ export function WhatDoWeThink() {
           <span className="font-bold text-red-600">Agents</span> are the future
           of AI, <span className="font-bold text-blue-600">Why?</span>
           {"\n"}
-          Because agents offer a solution to the biggest AI issues!
+          Because agents offer a solution to the biggest AI issues! and it's not
+          only our vision It's major players point of view{" "}
+          <span className="font-bold text-red-600 underline">
+            <Link
+              href="https://www.mckinsey.com/capabilities/mckinsey-digital/our-insights/why-agents-are-the-next-frontier-of-generative-ai?stcr=AF6B9CB453764286AF46902E388F0540&cid=other-eml-alt-mip-mck&hlkid=7fd5040f72544d80b7ed7a367130646e&hctky=14813738&hdpid=62a61fa0-2d7d-4f20-997f-b7375d5d1f4c"
+              target="_blank"
+            >
+              Mc Kinsey
+            </Link>
+          </span>
         </h1>
       </div>
       <div className="flex flex-col justify-center items-center min-h-[500px] h-[500px] gap-y-4 w-full lg:w-1/2">
