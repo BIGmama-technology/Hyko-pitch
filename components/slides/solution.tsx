@@ -21,6 +21,10 @@ const solutions = [
 export function Solution() {
   return (
     <div className="flex flex-col justify-center h-full text-center items-center max-w-3xl mx-auto">
+      <h1 className="text-2xl my-4 lg:my-8 lg:text-4xl leading-relaxed">
+        Hyko.ai
+      </h1>
+
       <ul className="text-xl  sm:text-2xl space-y-3 lg:space-y-5 w-full ">
         {solutions.map((solution) => (
           <SingleSolution solution={solution} />

@@ -44,20 +44,26 @@ export function Team() {
   });
 
   return (
-    <div className="flex w-full h-full flex-col items-center justify-center ">
-      <BubbleUI
-        options={mobileOptions}
-        className="w-full my-auto max-w-[680px] lg:w-0 lg:absolute h-full lg:h-[750px] rounded-full"
-      >
-        {childrenMobile}
-      </BubbleUI>
-      <BubbleUI
-        options={options}
-        className="w-0 absolute lg:w-full lg:flex my-auto lg:max-w-[1280px] h-full lg:h-[750px] rounded-full"
-      >
-        {children}
-      </BubbleUI>
-    </div>
+    <>
+      <h1 className="w-full text-center text-2xl my-4 lg:my-8 lg:text-4xl leading-relaxed">
+        Team
+      </h1>
+
+      <div className="flex w-full h-full flex-col items-center justify-center ">
+        <BubbleUI
+          options={mobileOptions}
+          className="w-full my-auto max-w-[680px] lg:w-0 lg:absolute h-full lg:h-[750px] rounded-full"
+        >
+          {childrenMobile}
+        </BubbleUI>
+        <BubbleUI
+          options={options}
+          className="w-0 absolute lg:w-full lg:flex my-auto lg:max-w-[1280px] h-full lg:h-[750px] rounded-full"
+        >
+          {children}
+        </BubbleUI>
+      </div>
+    </>
   );
 }
 

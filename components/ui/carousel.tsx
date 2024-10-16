@@ -209,7 +209,7 @@ const CarouselPrevious = React.forwardRef<
       onClick={scrollPrev}
       {...props}
     >
-      <ArrowLeft size={18} />
+      <ArrowLeft size={16} />
     </Button>
   );
 });
@@ -230,7 +230,7 @@ const CarouselNext = React.forwardRef<
       onClick={scrollNext}
       {...props}
     >
-      <ArrowRight size={18} />
+      <ArrowRight size={16} />
     </Button>
   );
 });

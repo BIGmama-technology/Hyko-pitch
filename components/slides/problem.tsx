@@ -20,6 +20,9 @@ const problems = [
 export function Problem() {
   return (
     <div className="flex w-full h-full flex-col items-center justify-center gap-y-4 lg:gap-y-8   text-center px-4 ">
+      <h1 className="text-2xl my-4 lg:my-8 lg:text-4xl leading-relaxed">
+        We learned from 10 years in the ground field that
+      </h1>
       <ul className="text-xl  sm:text-2xl space-y-3 lg:space-y-5 lg:max-w-3xl w-full ">
         {problems.map((problem) => (
           <SingleProblem problem={problem} />

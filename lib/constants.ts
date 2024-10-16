@@ -1,3 +1,4 @@
+import { ContactUs } from "@/components/slides/contact-us";
 import { Features } from "@/components/slides/features";
 import { BusinessModel } from "../components/slides/business-model";
 import { Competitors } from "../components/slides/competitors";
@@ -66,6 +67,10 @@ export const slides = [
   {
     title: "FAQ",
     content: FAQ,
+  },
+  {
+    title: "Contact Us",
+    content: ContactUs,
   },
 ];
 

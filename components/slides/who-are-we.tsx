@@ -31,6 +31,14 @@ const prevClients = [
     name: "Ooredoo",
     logo: "/clients/ooredoo.png",
   },
+  {
+    name: "Man Power",
+    logo: "/clients/manpower.png",
+  },
+  {
+    name: "CWT",
+    logo: "/clients/carlson.png",
+  },
 ];
 
 export default function WhoAreWe() {
@@ -40,29 +48,32 @@ export default function WhoAreWe() {
         <h2 className="text-2xl lg:text-4xl">
           We have been crafting custom{" "}
           <span className="font-bold text-blue-600">AI agents</span> for over a{" "}
-          <span className="font-bold text-blue-600">decade</span>
+          <span className="font-bold text-blue-600">decade</span>!
         </h2>
         <p className="text-normal lg:text-2xl">
-          We've made it possible for non-technical users to effortlessly build
-          their own AI agents using our platform Hyko.ai!
+          Then We've made it possible for non-technical users to effortlessly
+          build their own AI agents using our platform Hyko.ai!
         </p>
       </div>
-      <div className="w-full grid grid-cols-3 gap-4 items-stretch justify-stretch">
-        {prevClients.map((client) => (
-          <Card className="p-2 lg:p-4 flex flex-col justify-center items-center gap-2 shadow-md">
-            <Image
-              src={client.logo}
-              alt={client.name}
-              width={140}
-              height={120}
-            />
-            {client.name !== "Yourscrib" ? (
-              <h3 className="font-semibold text-normal lg:text-xl">
-                {client.name}
-              </h3>
-            ) : null}
-          </Card>
-        ))}
+      <div className="w-full flex flex-col justify-center items-center">
+        <div className="w-full grid grid-cols-3 gap-4 items-stretch justify-stretch">
+          {prevClients.map((client) => (
+            <Card className="p-2 lg:p-4 flex flex-col justify-center items-center gap-2 shadow-md">
+              <Image
+                src={client.logo}
+                alt={client.name}
+                width={140}
+                height={120}
+              />
+              {client.name !== "Yourscrib" ? (
+                <h3 className="font-semibold text-normal lg:text-xl">
+                  {client.name}
+                </h3>
+              ) : null}
+            </Card>
+          ))}
+        </div>
+        <h3 className="mt-4 text-xl lg:text-3xl">And many more ...</h3>
       </div>
     </article>
   );

@@ -113,7 +113,8 @@ export function Competitors() {
       <div className="flex flex-col justify-between gap-y-6 lg:px-[5%] text-center items-center lg:w-[40%]">
         <p className="text-xl lg:text-4xl">
           {" "}
-          <span className="font-bold text-red-600">Complex</span> AI Automatons,{" "}
+          <span className="font-bold text-orange-600">Complex</span> AI
+          Automatons,{" "}
           <span className="font-bold text-blue-600">Simplified</span> With{" "}
           <span className="font-bold text-blue-600">Hyko</span>
         </p>

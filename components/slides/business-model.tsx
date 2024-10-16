@@ -38,24 +38,33 @@ export function BusinessModel() {
           <span className="font-bold text-blue-600">SaaS</span> with two kinds
           of licenses
         </p>
-        <div className="flex justify-center items-stretch gap-x-4">
-          <Card className="p-4 flex flex-col justify-center items-center gap-y-2 lg:gap-y-6 w-[50%]">
-            <p className="text-xl lg:text-3xl font-semibold">
-              Do it you're self License
+        <div className="flex justify-stretch w-full items-stretch gap-x-2">
+          <Card className="p-4 flex flex-col justify-center items-center gap-y-2 lg:gap-y-6 w-full">
+            <p className="text-md lg:text-xl font-semibold">
+              Do It You're Self
             </p>
-            <h3 className="text-blue-600 text-2xl lg:text-5xl font-bold">
-              €49{" "}
+            <h3 className="text-blue-600 text-xl lg:text-3xl font-bold">
+              €19{" "}
             </h3>
-            <span className="text-xl lg:text-2xl font-bold text-black">
+            <span className="text-lg lg:text-xl font-bold text-black">
               Per Month
             </span>
           </Card>
-          <Card className="p-4 flex flex-col justify-center items-center gap-y-2 lg:gap-y-6 w-[50%]">
-            <p className="text-xl lg:text-3xl font-semibold">Custom License</p>
-            <h3 className="text-blue-600 text-2xl lg:text-5xl font-bold">
-              €1,000{" "}
+          <Card className="p-4 flex flex-col justify-center items-center gap-y-2 lg:gap-y-6 w-full">
+            <p className="text-xl lg:text-3xl font-semibold">PRO</p>
+            <h3 className="text-blue-600 text-xl lg:text-3xl font-bold">
+              €49{" "}
             </h3>
-            <span className="text-xl lg:text-2xl font-bold text-black">
+            <span className="text-lg lg:text-xl font-bold text-black">
+              Per Month
+            </span>
+          </Card>
+          <Card className="p-4 flex flex-col justify-center items-center gap-y-2 lg:gap-y-6 w-full">
+            <p className="text-xl lg:text-3xl font-semibold">CUSTOM</p>
+            <h3 className="text-blue-600 text-xl lg:text-3xl font-bold">
+              €1000{" "}
+            </h3>
+            <span className="text-lg lg:text-xl font-bold text-black">
               Per Month
             </span>
           </Card>
