@@ -1,24 +1,21 @@
 import Image from "next/image";
 
+import Particles from "../ui/particles";
+
 export function Opening() {
-  return (
-    <>
-      <Image
-        src="/intro.png"
-        alt="good image"
-        width={1280}
-        height={600}
-        className="hidden lg:block"
-        style={{ objectFit: "contain" }}
-      />
-      <Image
-        src="/intro-mobile.png"
-        alt="good image"
-        width={560}
-        height={300}
-        className="lg:hidden"
-        style={{ objectFit: "contain" }}
-      />
-    </>
-  );
+	return (
+		<div className="w-full h-screen rounded-md overflow-hidden flex justify-center items-center flex-col gap-y-8">
+			<p className="text-2xl md:text-3xl text-center">
+				With <span className="text-[#2563eb]"> Hyko </span> AI is chocolate 🍫
+			</p>
+			<Particles
+				className="absolute inset-0"
+				quantity={400}
+				staticity={10}
+				ease={40}
+				color="#2563eb"
+				refresh
+			/>
+		</div>
+	);
 }

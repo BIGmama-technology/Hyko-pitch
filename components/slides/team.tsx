@@ -1,112 +1,126 @@
 import { BorderBeam } from "@/components/ui/border-beam";
+import { cn } from "@/lib/utils";
+import type { TeamMember } from "@/types/team";
 import Image from "next/image";
-import BubbleUI from "react-bubble-ui";
-import "react-bubble-ui/dist/index.css";
-import { teamContent, teamContentMobile } from "../../lib/constants";
 
-export function Team() {
-  const options = {
-    size: 250,
-    minSize: 20,
-    gutter: 13,
-    provideProps: true,
-    numCols: 5,
-    fringeWidth: 400,
-    yRadius: 200,
-    xRadius: 250,
-    cornerRadius: 0,
-    showGuides: false,
-    compact: true,
-    gravitation: 10,
-  };
+const teamContent: TeamMember[] = [
+	{
+		coreTeam: true,
+		fullName: "Samir Cheraft",
+		role: "Office Manager",
+		image: "/team/samir.png",
+	},
 
-  const mobileOptions = {
-    size: 150,
-    minSize: 10,
-    gutter: 13,
-    provideProps: true,
-    numCols: 3,
-    fringeWidth: 400,
-    yRadius: 250,
-    xRadius: 150,
-    cornerRadius: 0,
-    showGuides: false,
-    compact: true,
-    gravitation: 10,
-  };
+	{
+		coreTeam: true,
+		fullName: "Hadj Khelil",
+		role: "CEO and founder of BIGmama",
+		image: "/team/hadj.png",
+	},
+	{
+		coreTeam: true,
+		fullName: "Hachem Betrouni",
+		role: "CTO",
+		image: "/team/hachem.png",
+	},
 
-  const childrenMobile = teamContentMobile.map((data, i) => {
-    return <Child member={data} key={i} />;
-  });
+	{
+		coreTeam: true,
+		fullName: "Darine Tag",
+		role: "Product Designer ",
+		image: "/team/darine.jpg",
+	},
 
-  const children = teamContent.map((data, i) => {
-    return <Child member={data} key={i} />;
-  });
+	{
+		coreTeam: true,
+		fullName: "Louai Boumediene",
+		role: "Backend Developer",
+		image: "/team/louai.png",
+	},
+	{
+		coreTeam: true,
+		fullName: "Anfal Yousra BOUCETTA",
+		role: "Software Engineer",
+		image: "/team/yousra.png",
+	},
+	{
+		fullName: "Mahdi KALLEL",
+		role: "Scientific Advisor",
+		image: "/team/mahdi.png",
+	},
+	{
+		fullName: "Abderrahmane Hadj-Nacer",
+		role: "Strategic Advisor",
+		image: "/team/hadj-nacer.png",
+	},
+	{
+		fullName: "Jacques VINCENT",
+		role: "Share holder",
+		image: "/team/jaques-vincent.png",
+	},
+	{
+		fullName: "J-P HERTEMAN",
+		role: "Share holder",
+		image: "/team/j-p-herteman.png",
+	},
+	{
+		fullName: "Edgar MORIN",
+		role: "Share holder",
+		image: "/team/edgar-morin.png",
+	},
+];
 
-  return (
-    <>
-      <h1 className="w-full text-center text-2xl my-4 lg:my-8 lg:text-4xl leading-relaxed">
-        Team
-      </h1>
-
-      <div className="flex w-full h-full flex-col items-center justify-center ">
-        <BubbleUI
-          options={mobileOptions}
-          className="w-full my-auto max-w-[680px] lg:w-0 lg:absolute h-full lg:h-[750px] rounded-full"
-        >
-          {childrenMobile}
-        </BubbleUI>
-        <BubbleUI
-          options={options}
-          className="w-0 absolute lg:w-full lg:flex my-auto lg:max-w-[1280px] h-full lg:h-[750px] rounded-full"
-        >
-          {children}
-        </BubbleUI>
-      </div>
-    </>
-  );
-}
-
-const Child = ({ member }: { member: any }) => {
-  if (member.image === undefined) {
-    return (
-      <div
-        className="w-full  bg-blue-400 group  relative overflow-hidden rounded-full h-full shadow-2xl"
-        key={member.fullName.toLowerCase().replace(" ", "-")}
-      ></div>
-    );
-  }
-  return (
-    <div
-      className="w-full p-1 bg-blue-500 group  relative overflow-hidden rounded-full h-full shadow-2xl"
-      key={member.fullName.toLowerCase().replace(" ", "-")}
-    >
-      <Image
-        alt={member.fullName}
-        className="transition-transform duration-200 w-full h-full"
-        src={member.image}
-        fill
-        style={{ objectFit: "cover" }}
-      />
-      <div className="absolute inset-0 z-10 bg-gradient-to-b from-black/30 to-black opacity-60 transition-opacity duration-200 group-hover:opacity-100" />
-
-      <div className="absolute left-0 top-0 z-20 flex h-full w-full items-center justify-center gap-4 p-4 text-white transition-opacity duration-200 group-hover:opacity-100 opacity-0">
-        <div className="flex flex-col justify-center items-center gap-y-2">
-          <h2 className="text-lg  text-center font-semibold">
-            {member.fullName}
-          </h2>
-          <h3 className="text-sm text-center">{member.role}</h3>
-        </div>
-      </div>
-
-      {member.coreTeam ? (
-        <BorderBeam
-          className="z-99999"
-          size={250}
-          duration={12}
-          delay={Math.round(Math.random() * 10)}
-        />
-      ) : null}
-    </div>
-  );
+const TeamCard = (team_member: TeamMember) => {
+	return (
+		<div
+			className={cn(
+				"relative cursor-pointer overflow-hidden rounded-xl border p-4",
+				"border-gray-950/[.1] bg-gray-950/[.01] hover:bg-gray-950/[.05]",
+			)}
+		>
+			{team_member.coreTeam ? (
+				<BorderBeam
+					borderWidth={2}
+					size={100}
+					colorFrom="#9DD4E9"
+					colorTo="#E0E893"
+					delay={5}
+				/>
+			) : null}
+			<div className="flex flex-row items-center gap-2">
+				<Image
+					className="rounded-full aspect-square object-cover"
+					width={40}
+					height={40}
+					alt=""
+					src={team_member.image}
+				/>
+				<div className="flex flex-col">
+					<figcaption className="text-sm font-medium dark:text-white">
+						{team_member.fullName}
+					</figcaption>
+				</div>
+			</div>
+			<blockquote className="mt-2 text-sm text-start">
+				{team_member.role}
+			</blockquote>
+		</div>
+	);
 };
+
+const Team = () => {
+	return (
+		<div>
+			<h1 className="text-2xl mb-4 lg:mb-8 lg:text-4xl leading-relaxed">
+				Team behinde Hyko.ai 🏆
+			</h1>
+			<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+				{teamContent.map((member) => (
+					<TeamCard key={member.fullName} {...member} />
+				))}
+			</div>
+		</div>
+	);
+};
+
+export default Team;
