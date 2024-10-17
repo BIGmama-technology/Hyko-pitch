@@ -45,7 +45,7 @@ export const slides = [
 		content: Team,
 	},
 	{
-		title: "What our rock stars say about us!",
+		title: "What our rockstars say about us!",
 		content: Testimonials,
 	},
 	{

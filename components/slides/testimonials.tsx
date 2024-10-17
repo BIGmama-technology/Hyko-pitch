@@ -95,7 +95,7 @@ export function Testimonials() {
 	return (
 		<div className="flex w-full h-screen flex-col items-center justify-center  text-center z-50">
 			<h1 className="text-2xl mb-4 lg:mb-8 lg:text-4xl leading-relaxed">
-				What do rock-stars say about us!
+				What do rockstars say about us!
 			</h1>
 			<Marquee pauseOnHover className="[--duration:20s]">
 				{firstRow.map((review) => (
