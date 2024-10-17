@@ -4,7 +4,7 @@ export function Features() {
 			<iframe
 				title="Hyko demo"
 				src="https://drive.google.com/file/d/1o71UyVnAyRrVtPLZxP4osiUisAGEDk27/preview"
-				allow="autoplay; fullscreen"
+				allow="fullscreen"
 				className="aspect-video w-full rounded-lg"
 			/>
 		</div>
